@@ -5,10 +5,37 @@
 #define N_RIGHE  20
 #define N_COLONNE  10
 
+/*1*/
+#define RED "\e[0;31m"
+/*2*/
+#define GRN "\e[0;32m"
+/*3*/
+#define YEL "\e[0;33m"
+/*4*/
+#define BLU "\e[0;34m"
+/*5*/
+#define MAG "\e[0;35m"
+/*6*/
+#define CYN "\e[0;36m"
+/*7*/
+#define WHT "\e[0;37m"
+
+/*
+ * TO DO
+ * Bettiol:
+ *  - Grafica
+ *  - Contatore pezzi
+ *  - Contatore punti
+ *  - Interazione utente
+ *  -
+ * */
+
 struct Blocco{
     int forma[4][4];
     int rotazione;
     int pos_x;
+    /*int num_blocchi*/
+    int colore;
 };
 
 struct Piano_Gioco{
@@ -23,8 +50,9 @@ void flip_blocco_0(struct Blocco *b);
 void inizializza_matrice(struct Piano_Gioco *m);
 void stampa_matrice(struct Piano_Gioco m);
 void inizializza_blocchi(struct Blocco *blocchi);
+void stampa_colore(int colore);
 
-void inserisci_blocco(struct Piano_Gioco *m, struct Blocco b);
+int inserisci_blocco(struct Piano_Gioco *m, struct Blocco b);
 void caduta_blocco(struct Piano_Gioco *m, struct Blocco b, int piano);
 int verifica_posizione_blocco(struct Piano_Gioco *m, struct Blocco b, int piano);
 void inserisci_bloccco_posizione(struct Piano_Gioco *m, struct Blocco b, int piano);
@@ -36,13 +64,14 @@ int main() {
     inizializza_matrice(&player1);
     inizializza_blocchi(&blocchi);
 
+    stampa_blocchi(blocchi);
+
     /*richiesta blocco, posizione e rotazione*/
 
-    blocchi[0].pos_x=5;
-    flip_blocco(&blocchi[0],1);
+    blocchi[0].pos_x=-1;
+    flip_blocco(&blocchi[0],2);
 
     inserisci_blocco(&player1, blocchi[0]);
-
     stampa_matrice(player1);
     printf("\n\n");
 
@@ -73,10 +102,7 @@ void stampa_blocco(struct Blocco b){
     int i, j;
     for(i=0;i<4;i++){
         for (j = 0;  j<4 ; j++) {
-            if(b.forma[i][j]!=0)
-                printf("#");
-            else
-                printf(" ");
+            stampa_colore(b.forma[i][j]);
         }
         printf("\n");
     }
@@ -91,7 +117,6 @@ void stampa_blocchi(struct  Blocco *b){
 
 void flip_blocco(struct Blocco *b, int rot) {
     int i, j, k;
-    printf("%d %d\n",rot, b->rotazione);
     /*calcolo la rotazione da effettuare per arrivare a rot*/
     rot=(4-(b->rotazione-rot))%4;
 
@@ -132,13 +157,33 @@ void stampa_matrice(struct Piano_Gioco m){
     int i, j;
     for(i=0;i<N_RIGHE;i++){
         for (j = 0;  j<N_COLONNE ; j++) {
-            if(m.matrice[i][j]==0)
-                printf(".");
-            else
-                printf("#");
+            /* if(m.matrice[i][j]==0)
+                 printf(".");
+             else
+                 printf("#");*/
+            stampa_colore(m.matrice[i][j]);
         }
         printf("\n");
     }
+}
+
+void stampa_colore(int colore){
+    if(colore==1)
+        printf(RED"#"WHT);
+    else if(colore==2)
+        printf(GRN"#"WHT);
+    else if(colore==3)
+        printf(YEL"#"WHT);
+    else if(colore==4)
+        printf(BLU"#"WHT);
+    else if(colore==5)
+        printf(MAG"#"WHT);
+    else if(colore==6)
+        printf(CYN"#"WHT);
+    else if(colore==7)
+        printf(WHT"#"WHT);
+    else
+        printf(".");
 }
 
 void inizializza_blocchi(struct Blocco *blocchi){
@@ -148,31 +193,32 @@ void inizializza_blocchi(struct Blocco *blocchi){
             0,
     };
     struct Blocco quadrato={
-            {1,1,0,0,1,1,0,0,0,0,0,0},
+            {2,2,0,0,2,2,0,0,0,0,0,0},
             0,
             0,
     };
     struct Blocco l_sinistra={
-            {1,0,0,0,1,1,1,0,0,0,0,0},
+            {3,0,0,0,3,3,3,0,0,0,0,0},
+            0,
             0,
     };
     struct Blocco l_destra={
-            {0,0,1,0,1,1,1,0,0,0,0,0},
+            {0,0,4,0,4,4,4,0,0,0,0,0},
             0,
             0,
     };
     struct Blocco s_sinistra={
-            {0,1,1,0,1,1,0,0,0,0,0,0},
+            {0,5,5,0,5,5,0,0,0,0,0,0},
             0,
             0,
     };
     struct Blocco s_destra={
-            {1,1,0,0,0,1,1,0,0,0,0,0},
+            {6,6,0,0,0,6,6,0,0,0,0,0},
             0,
             0,
     };
     struct Blocco t_rov={
-            {0,1,0,0,1,1,1,0,0,0,0,0},
+            {0,7,0,0,7,7,7,0,0,0,0,0},
             0,
             0,
     };
@@ -186,71 +232,15 @@ void inizializza_blocchi(struct Blocco *blocchi){
     blocchi[6]=t_rov;
 }
 
-/*void inserisci_blocco(struct Piano_Gioco *m, struct Blocco b){
-    int i, j;
-
-    for(i=16;i<20;i++){
-        for(j=0;j<4;j++){
-            m->matrice[i][j]=b.forma[i-16][j];
-        }
-    }
-}*/
-
-/*void inserisci_blocco(struct Piano_Gioco *m, struct Blocco b){
-    int i, j, k;
-    int vuoti;
-    int h;
-
-    for(i=0;i<4;i++){
-        k=0;
-        for(j=b.pos_x;j<b.pos_x+4;j++){
-            m->matrice[i][j]=b.forma[i][k];
-            k++;
-        }
-    }
-    stampa_matrice(*m);
-    printf("dio\n\n");
-
-
-    i=19;
-    h=0;
-     while (i>h){
-         vuoti=0;
-         for(j=b.pos_x;j<b.pos_x+4;j++){
-
-             if(m->matrice[i][j]!=0)
-                 vuoti++;
-         }
-         printf("2");
-
-         if(vuoti==N_COLONNE || vuoti==0) {
-             if (vuoti == 0)
-                 m->score++;
-             printf("3");
-             for (j = i;j>0;j++) {
-                for(k=b.pos_x;k<b.pos_x+4;k++){
-                    m->matrice[j][k]=m->matrice[j+1][k];
-                }
-             }
-             for(k=b.pos_x;k<b.pos_x+4;k++){
-                 m->matrice[0][k]=0;
-             }
-             h++;
-         }else{
-             i--;
-         }
-         stampa_matrice(*m);
-         printf("\n\n");
-    }
-
-}*/
-
 void inserisci_bloccco_posizione(struct Piano_Gioco *m, struct Blocco b, int piano){
     int i, j;
     for(i=3;i>=0;i--) {
         for (j = 0; j < 4; j++) {
-            if (piano - i % 3 >= 0 && m->matrice[piano - (3-i)][b.pos_x + j]==0)
-                m->matrice[piano - (3-i)][b.pos_x + j] = b.forma[i][j];
+            if(piano-(3-i)>=0 && b.pos_x+j<N_COLONNE &&  b.pos_x+j>=0) {
+                /*sostituisco i blocchi vuoti del piano di gioco con i nuovi valori del blocco*/
+                if (piano - i % 3 >= 0 && m->matrice[piano - (3 - i)][b.pos_x + j] == 0)
+                    m->matrice[piano - (3 - i)][b.pos_x + j] = b.forma[i][j];
+            }
         }
     }
 }
@@ -260,7 +250,7 @@ int verifica_posizione_blocco(struct Piano_Gioco *m, struct Blocco b, int piano)
     int i,j;
     for(i=3;i>=0 && corretto==1;i--){
         for(j=0;j<4 && corretto==1;j++){
-            if(piano-(3-i)>=0)
+            if(piano-(3-i)>=0 && b.pos_x+j<N_COLONNE &&  b.pos_x+j>=0)
                 if(m->matrice[piano-(3-i)][b.pos_x+j]!=0 && b.forma[i][j]!=0)
                     corretto=0;
         }
@@ -278,8 +268,9 @@ void caduta_blocco(struct Piano_Gioco *m, struct Blocco b, int piano){
     }
 }
 
-void inserisci_blocco(struct Piano_Gioco *m, struct Blocco b){
-    int flag=0;
+int inserisci_blocco(struct Piano_Gioco *m, struct Blocco b){
+    int perso=0;
     caduta_blocco(m,b,0);
-    /*controlla se vinto o se score aumenta*/
+    /*controllo se ho perso o se score aumenta*/
+    return perso;
 }
