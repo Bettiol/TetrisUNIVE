@@ -20,6 +20,16 @@
 /*7*/
 #define WHT "\e[0;37m"
 
+/*
+ * TO DO
+ * Bettiol:
+ *  - Grafica
+ *  - Contatore pezzi
+ *  - Contatore punti
+ *  - Interazione utente
+ *  - 
+ * */
+
 struct Blocco{
     int forma[4][4];
     int rotazione;
