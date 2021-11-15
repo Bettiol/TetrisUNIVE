@@ -2,7 +2,7 @@
 
 #define N_BLOCCHI  7
 
-#define N_RIGHE  20
+#define N_RIGHE  15
 #define N_COLONNE  10
 
 /*1*/
@@ -310,9 +310,17 @@ int score_control(struct Piano_Gioco *m){
         }
         if(flag==0){
             score++;
-            m->score=m->score+1;
             elimina_riga(m,i);
         }
+    }
+    if(score==1){
+        m->score=m->score+1;
+    }else if(score==2){
+        m->score=m->score+3;
+    }else if(score==3){
+        m->score=m->score+6;
+    }else if(score==4){
+        m->score=m->score+12;
     }
 
     return score;
