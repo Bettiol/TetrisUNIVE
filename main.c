@@ -25,7 +25,6 @@
  * Bettiol:
  *  - Grafica
  *  - Contatore pezzi
- *  - Contatore punti
  *  - Interazione utente
  *  -
  * */
@@ -55,6 +54,8 @@ int inserisci_blocco(struct Piano_Gioco *m, struct Blocco b);
 int caduta_blocco(struct Piano_Gioco *m, struct Blocco b, int piano);
 int verifica_posizione_blocco(struct Piano_Gioco *m, struct Blocco b, int piano);
 int inserisci_bloccco_posizione(struct Piano_Gioco *m, struct Blocco b, int piano);
+void elimina_riga(struct Piano_Gioco *m, int riga);
+int score_control(struct Piano_Gioco *m);
 
 int main() {
     struct Blocco blocchi[N_BLOCCHI];
@@ -271,10 +272,48 @@ int caduta_blocco(struct Piano_Gioco *m, struct Blocco b, int piano){
 
 int inserisci_blocco(struct Piano_Gioco *m, struct Blocco b){
     int perso;
+    int score;
     perso=caduta_blocco(m,b,0);
     if(perso==1){
         printf("hai perso coglione AHAHAHAHAHAH \n\n");
     }
-    /*controllo se ho perso o se score aumenta*/
+    score= score_control(m);
+
+    /*avvio la penalità per l'avversario*/
+
     return perso;
+}
+
+
+void elimina_riga(struct Piano_Gioco *m, int riga){
+    int j, i;
+    for(i=riga;i>0;i--){
+        for(j=0;j<N_COLONNE;j++){
+            m->matrice[i][j]=m->matrice[i-1][j];
+        }
+    }
+    for(j=0;j<N_COLONNE;j++){
+        m->matrice[0][j]=0;
+    }
+}
+
+int score_control(struct Piano_Gioco *m){
+    int score=0;
+    int i, j;
+    int flag=0;
+    for(i=0;i<N_RIGHE;i++){
+        flag=0;
+        for(j=0;j<N_COLONNE && flag==0;j++){
+            if(m->matrice[i][j]==0){
+                flag=1;
+            }
+        }
+        if(flag==0){
+            score++;
+            m->score=m->score+1;
+            elimina_riga(m,i);
+        }
+    }
+
+    return score;
 }
