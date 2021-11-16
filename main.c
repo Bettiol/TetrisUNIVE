@@ -33,8 +33,7 @@ struct Blocco{
     int forma[4][4];
     int rotazione;
     int pos_x;
-    /*int num_blocchi*/
-    int colore;
+    int num_blocchi;
 };
 
 struct Piano_Gioco{
@@ -56,6 +55,7 @@ int verifica_posizione_blocco(struct Piano_Gioco *m, struct Blocco b, int piano)
 int inserisci_bloccco_posizione(struct Piano_Gioco *m, struct Blocco b, int piano);
 void elimina_riga(struct Piano_Gioco *m, int riga);
 int score_control(struct Piano_Gioco *m);
+void penalita(struct Piano_Gioco *m, int score);
 
 int main() {
     struct Blocco blocchi[N_BLOCCHI];
@@ -111,6 +111,7 @@ void stampa_blocchi(struct  Blocco *b){
     int i;
     for(i=0;i<N_BLOCCHI;i++){
         stampa_blocco(b[i]);
+        printf("numero blocchi rimanenti -> %d\n",b[i].num_blocchi);
     }
 }
 
@@ -190,36 +191,43 @@ void inizializza_blocchi(struct Blocco *blocchi){
             {1,1,1,1,0,0,0,0,0,0,0,0},
             0,
             0,
+            20,
     };
     struct Blocco quadrato={
             {2,2,0,0,2,2,0,0,0,0,0,0},
             0,
             0,
+            20,
     };
     struct Blocco l_sinistra={
             {3,0,0,0,3,3,3,0,0,0,0,0},
             0,
             0,
+            20,
     };
     struct Blocco l_destra={
             {0,0,4,0,4,4,4,0,0,0,0,0},
             0,
             0,
+            20,
     };
     struct Blocco s_sinistra={
             {0,5,5,0,5,5,0,0,0,0,0,0},
             0,
             0,
+            20,
     };
     struct Blocco s_destra={
             {6,6,0,0,0,6,6,0,0,0,0,0},
             0,
             0,
+            20,
     };
     struct Blocco t_rov={
             {0,7,0,0,7,7,7,0,0,0,0,0},
             0,
             0,
+            20,
     };
 
     blocchi[0]=linea;
@@ -279,8 +287,9 @@ int inserisci_blocco(struct Piano_Gioco *m, struct Blocco b){
     }
     score= score_control(m);
 
-    /*avvio la penalità per l'avversario*/
-
+    /*avvio la penalità per l'avversario
+    penalita(m_avversario, score);
+    */
     return perso;
 }
 
@@ -300,7 +309,7 @@ void elimina_riga(struct Piano_Gioco *m, int riga){
 int score_control(struct Piano_Gioco *m){
     int score=0;
     int i, j;
-    int flag=0;
+    int flag;
     for(i=0;i<N_RIGHE;i++){
         flag=0;
         for(j=0;j<N_COLONNE && flag==0;j++){
@@ -324,4 +333,16 @@ int score_control(struct Piano_Gioco *m){
     }
 
     return score;
+}
+
+void penalita(struct Piano_Gioco *m, int score){
+    int i;
+    int app;
+    if(score>=3){
+        for(i=0;i<N_COLONNE;i++){
+            app=m->matrice[N_RIGHE-1][i];
+            m->matrice[N_RIGHE-1][i]=m->matrice[N_RIGHE-2][i];
+            m->matrice[N_RIGHE-2][i]=app;
+        }
+    }
 }
