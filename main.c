@@ -109,6 +109,22 @@ void stampa_blocco(struct Blocco b){
 
 void stampa_blocchi(struct  Blocco *b){
     int i;
+    /*
+     if(blocchi[0].num_blocchi>0)
+        printf("blocco 0\t\trimanenti:%d\nrot: 0 \t\trot: 90 \trot: 180 \trot:270\n"RED"####\t\t#\t\t####\t\t#\n\t\t#\t\t\t\t#\n\t\t#\t\t\t\t#\n\t\t#\t\t\t\t#\n\n"WHT, blocchi[0].num_blocchi);
+    if(blocchi[1].num_blocchi>0)
+        printf("blocco 1\t\trimanenti:%d\nrot: 0 \t\trot: 90 \trot: 180 \trot:270\n"GRN"##\t\t##\t\t##\t\t##\n##\t\t##\t\t##\t\t##\n\n"WHT, blocchi[1].num_blocchi);
+    if(blocchi[2].num_blocchi>0)
+        printf("blocco 2\t\trimanenti:%d\nrot: 0 \t\trot: 90 \trot: 180 \trot:270\n"YEL"#\t\t##\t\t###\t\t #\n###\t\t#\t\t  #\t\t #\n\t\t#\t\t\t\t##\n\n"WHT, blocchi[2].num_blocchi);
+    if(blocchi[3].num_blocchi>0)
+        printf("blocco 3\t\trimanenti:%d\nrot: 0 \t\trot: 90 \trot: 180 \trot:270\n"BLU"  #\t\t#\t\t###\t\t##\n###\t\t#\t\t#\t\t #\n\t\t##\t\t\t\t #\n\n"WHT, blocchi[3].num_blocchi);
+    if(blocchi[4].num_blocchi>0)
+        printf("blocco 4\t\trimanenti:%d\nrot: 0 \t\trot: 90 \trot: 180 \trot:270\n"MAG" ##\t\t#\t\t ##\t\t#\n##\t\t##\t\t##\t\t##\n\t\t #\t\t\t\t #\n\n"WHT, blocchi[4].num_blocchi);
+    if(blocchi[5].num_blocchi>0)
+        printf("blocco 5\t\trimanenti:%d\nrot: 0 \t\trot: 90 \trot: 180 \trot:270\n"CYN"##\t\t #\t\t##\t\t #\n ##\t\t##\t\t ##\t\t##\n\t\t#\t\t\t\t#\n\n"WHT, blocchi[5].num_blocchi);
+    if(blocchi[6].num_blocchi>0)
+        printf("blocco 6\t\trimanenti:%d\nrot: 0 \t\trot: 90 \trot: 180 \trot:270\n"WHT" #\t\t#\t\t###\t\t #\n###\t\t##\t\t #\t\t##\n\t\t#\t\t\t\t #\n\n"WHT, blocchi[6].num_blocchi);
+     */
     for(i=0;i<N_BLOCCHI;i++){
         stampa_blocco(b[i]);
         printf("numero blocchi rimanenti -> %d\n",b[i].num_blocchi);
