@@ -57,42 +57,13 @@ void elimina_riga(struct Piano_Gioco *m, int riga);
 int score_control(struct Piano_Gioco *m);
 void penalita(struct Piano_Gioco *m, int score);
 
+void single_player();
+void multi_player();
+void player_cpu();
+
 int main() {
-    struct Blocco blocchi[N_BLOCCHI];
-
-    struct Piano_Gioco player1;
-    inizializza_matrice(&player1);
-    inizializza_blocchi(&blocchi[0]);
-
-    stampa_blocchi(blocchi);
-
-    /*richiesta blocco, posizione e rotazione*/
-
-    blocchi[0].pos_x=0;
-    flip_blocco(&blocchi[0],1);
-    inserisci_blocco(&player1, blocchi[0]);
-    stampa_matrice(player1);
-    printf("\n\n");
-
-    blocchi[1].pos_x=5;
-    flip_blocco(&blocchi[1],0);
-    inserisci_blocco(&player1, blocchi[1]);
-    stampa_matrice(player1);
-    printf("\n\n");
-
-    blocchi[2].pos_x=1;
-    flip_blocco(&blocchi[2],2);
-    inserisci_blocco(&player1, blocchi[2]);
-    stampa_matrice(player1);
-    printf("\n\n");
-
-    blocchi[3].pos_x=4;
-    flip_blocco(&blocchi[3],0);
-    inserisci_blocco(&player1, blocchi[3]);
-    stampa_matrice(player1);
-    printf("\n\n");
-
-    /*ripeti il tutto*/
+    /*single_player()*/
+    multi_player();
 
     return 0;
 }
@@ -125,10 +96,10 @@ void stampa_blocchi(struct  Blocco *b){
     if(b[6].num_blocchi>0)
         printf("blocco 6\t\trimanenti:%d\nrot: 0 \t\trot: 90 \trot: 180 \trot:270\n"WHT" #\t\t#\t\t###\t\t #\n###\t\t##\t\t #\t\t##\n\t\t#\t\t\t\t #\n\n"WHT, b[6].num_blocchi);
 
-    for(i=0;i<N_BLOCCHI;i++){
+    /*for(i=0;i<N_BLOCCHI;i++){
         stampa_blocco(b[i]);
         printf("numero blocchi rimanenti -> %d\n",b[i].num_blocchi);
-    }
+    }*/
 }
 
 void flip_blocco(struct Blocco *b, int rot) {
@@ -171,15 +142,17 @@ void inizializza_matrice(struct Piano_Gioco *m){
 
 void stampa_matrice(struct Piano_Gioco m){
     int i, j;
+    printf("score : %d\n",m.score);
+    for (j = 0;  j<N_COLONNE ; j++) {
+        printf("|%d",j);
+    }
+    printf("|\n");
     for(i=0;i<N_RIGHE;i++){
         for (j = 0;  j<N_COLONNE ; j++) {
-            /* if(m.matrice[i][j]==0)
-                 printf(".");
-             else
-                 printf("#");*/
+            printf("|");
             stampa_colore(m.matrice[i][j]);
         }
-        printf("\n");
+        printf("|\n");
     }
 }
 
@@ -199,7 +172,7 @@ void stampa_colore(int colore){
     else if(colore==7)
         printf(WHT"#"WHT);
     else
-        printf(".");
+        printf(" ");
 }
 
 void inizializza_blocchi(struct Blocco *blocchi){
@@ -296,16 +269,23 @@ int caduta_blocco(struct Piano_Gioco *m, struct Blocco b, int piano){
 
 int inserisci_blocco(struct Piano_Gioco *m, struct Blocco b){
     int perso;
-    int score;
     perso=caduta_blocco(m,b,0);
     if(perso==1){
         printf("hai perso coglione AHAHAHAHAHAH \n\n");
     }
-    score= score_control(m);
+    score_control(m);
+    return perso;
+}
 
-    /*avvio la penalità per l'avversario
-    penalita(m_avversario, score);
-    */
+int inserisci_blocco_multi(struct Piano_Gioco *m1, struct Piano_Gioco *m2, struct Blocco b){
+    int perso;
+    int score;
+    perso=caduta_blocco(m1,b,0);
+    if(perso==1){
+        printf("hai perso coglione AHAHAHAHAHAH \n\n");
+    }
+    score= score_control(m1);
+    penalita(m2, score);
     return perso;
 }
 
@@ -360,5 +340,67 @@ void penalita(struct Piano_Gioco *m, int score){
             m->matrice[N_RIGHE-1][i]=m->matrice[N_RIGHE-2][i];
             m->matrice[N_RIGHE-2][i]=app;
         }
+    }
+}
+
+void single_player(){
+    struct Blocco blocchi[N_BLOCCHI];
+    struct Piano_Gioco player1;
+    int n_blocco, pos_x, rot, perso=0;
+
+    inizializza_matrice(&player1);
+    inizializza_blocchi(&blocchi[0]);
+
+    while (perso==0) {
+        stampa_blocchi(blocchi);
+        stampa_matrice(player1);
+        /*controllo input*/
+        printf("blocco -> ");
+        scanf("%d", &n_blocco);
+        printf("posizione -> ");
+        scanf("%d", &pos_x);
+        printf("rotazione -> ");
+        scanf("%d", &rot);
+
+        blocchi[n_blocco].pos_x = pos_x;
+        flip_blocco(&blocchi[n_blocco], rot);
+        perso=inserisci_blocco(&player1, blocchi[n_blocco]);
+    }
+}
+
+void multi_player() {
+    struct Blocco blocchi[N_BLOCCHI];
+    struct Piano_Gioco player1;
+    struct Piano_Gioco player2;
+    int n_blocco, pos_x, rot, perso = 0, p = 0;
+
+    inizializza_matrice(&player1);
+    inizializza_matrice(&player2);
+    inizializza_blocchi(&blocchi[0]);
+
+    while (perso == 0) {
+        stampa_blocchi(blocchi);
+        if (p == 0) {
+            printf("p1\n");
+            stampa_matrice(player1);
+        } else {
+            printf("p2\n");
+            stampa_matrice(player2);
+        }
+        /*controllo input*/
+        printf("blocco -> ");
+        scanf("%d", &n_blocco);
+        printf("posizione -> ");
+        scanf("%d", &pos_x);
+        printf("rotazione -> ");
+        scanf("%d", &rot);
+
+        blocchi[n_blocco].pos_x = pos_x;
+        flip_blocco(&blocchi[n_blocco], rot);
+        if (p == 0)
+            perso = inserisci_blocco_multi(&player1, &player2, blocchi[n_blocco]);
+        else
+            perso = inserisci_blocco_multi(&player2, &player1, blocchi[n_blocco]);
+        p = (p + 1) % 2;
     }
 }
