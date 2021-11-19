@@ -22,11 +22,10 @@
 
 /*
  * TO DO
- * Bettiol:
- *  - Grafica
- *  - Contatore pezzi
- *  - Interazione utente
- *  -
+ *  - Menù per la scelta della modalità
+ *  - Grafica e messaggi di interazione
+ *  - Controllo posizione del pezzo
+ *  - Algoritmo per la CPU
  * */
 
 struct Blocco{
@@ -56,14 +55,20 @@ int inserisci_bloccco_posizione(struct Piano_Gioco *m, struct Blocco b, int pian
 void elimina_riga(struct Piano_Gioco *m, int riga);
 int score_control(struct Piano_Gioco *m);
 void penalita(struct Piano_Gioco *m, int score);
+int fine_blocchi(struct Blocco *v);
+
+void controllo_input(int *rot, int *pos, int *nbloc, struct Blocco *v, struct Piano_Gioco m);
+int controllo_rot();
+int controllo_pos(struct  Piano_Gioco m);
+int controllo_nbloc(struct Blocco *v);
 
 void single_player();
 void multi_player();
 void player_cpu();
 
 int main() {
-    /*single_player()*/
-    multi_player();
+    single_player();
+    /* multi_player();*/
 
     return 0;
 }
@@ -238,7 +243,7 @@ int inserisci_bloccco_posizione(struct Piano_Gioco *m, struct Blocco b, int pian
                 if (piano - i % 3 >= 0 && m->matrice[piano - (3 - i)][b.pos_x + j] == 0)
                     m->matrice[piano - (3 - i)][b.pos_x + j] = b.forma[i][j];
             }else if(piano-(3-i)<0 && b.forma[i][j]!=0)
-              perso=1;
+                perso=1;
         }
     }
     return perso;
@@ -346,25 +351,22 @@ void penalita(struct Piano_Gioco *m, int score){
 void single_player(){
     struct Blocco blocchi[N_BLOCCHI];
     struct Piano_Gioco player1;
-    int n_blocco, pos_x, rot, perso=0;
+    int n_blocco, pos_x, rot, perso=0, fine=0;
 
     inizializza_matrice(&player1);
     inizializza_blocchi(&blocchi[0]);
 
-    while (perso==0) {
+    while (perso==0 && fine==0) {
         stampa_blocchi(blocchi);
         stampa_matrice(player1);
-        /*controllo input*/
-        printf("blocco -> ");
-        scanf("%d", &n_blocco);
-        printf("posizione -> ");
-        scanf("%d", &pos_x);
-        printf("rotazione -> ");
-        scanf("%d", &rot);
+
+        controllo_input(&rot,&pos_x,&n_blocco, &blocchi[0], player1);
 
         blocchi[n_blocco].pos_x = pos_x;
         flip_blocco(&blocchi[n_blocco], rot);
+        blocchi[n_blocco].num_blocchi--;
         perso=inserisci_blocco(&player1, blocchi[n_blocco]);
+        fine= fine_blocchi(&blocchi[0]);
     }
 }
 
@@ -383,17 +385,12 @@ void multi_player() {
         if (p == 0) {
             printf("p1\n");
             stampa_matrice(player1);
+            controllo_input(&rot,&pos_x,&n_blocco, &blocchi[0], player1);
         } else {
             printf("p2\n");
             stampa_matrice(player2);
+            controllo_input(&rot,&pos_x,&n_blocco, &blocchi[0], player2);
         }
-        /*controllo input*/
-        printf("blocco -> ");
-        scanf("%d", &n_blocco);
-        printf("posizione -> ");
-        scanf("%d", &pos_x);
-        printf("rotazione -> ");
-        scanf("%d", &rot);
 
         blocchi[n_blocco].pos_x = pos_x;
         flip_blocco(&blocchi[n_blocco], rot);
@@ -403,4 +400,78 @@ void multi_player() {
             perso = inserisci_blocco_multi(&player2, &player1, blocchi[n_blocco]);
         p = (p + 1) % 2;
     }
+}
+
+int fine_blocchi(struct Blocco *v){
+    int i;
+    int fine=1;
+    for(i=0;i<N_BLOCCHI && fine==1;i++){
+        if(v[i].num_blocchi!=0)
+            fine=0;
+    }
+    if(fine==1){
+        printf("hai finito i blocchi AHAHAHAHAHAH\n\n");
+    }
+    return fine;
+}
+
+int controllo_rot(){
+    /*-1 valore non valido*/
+    int rot=0;
+    printf("rotazione -> ");
+    scanf("%d", &rot);
+    if(rot==0)
+        rot=0;
+    else if(rot==90)
+        rot=1;
+    else if(rot==180)
+        rot=2;
+    else if(rot==270)
+        rot=3;
+    else
+        rot=-1;
+
+    if(rot==-1)
+        printf("la rotazione selezionata non esiste\n");
+    return rot;
+}
+
+int controllo_pos(struct Piano_Gioco m){
+    /*-1 valore non valido*/
+    int pos=0;
+    printf("posizione -> ");
+    scanf("%d", &pos);
+
+    if(pos==-1)
+        printf("la posizione selezionata non è valida\n");
+    return pos;
+}
+
+int controllo_nbloc(struct Blocco *v){
+    /*-1 valore non valido*/
+    int nbloc=0;
+    printf("blocco -> ");
+    scanf("%d", &nbloc);
+    if(nbloc>=0 && nbloc<N_BLOCCHI){
+        if(v[nbloc].num_blocchi<=0)
+            nbloc=-1;
+    }else{
+        nbloc=-1;
+    }
+
+    if(nbloc==-1)
+        printf("il blocco selezionato non esiste\n");
+    return nbloc;
+}
+
+void controllo_input(int *rot, int *pos, int *nbloc, struct Blocco *v, struct Piano_Gioco m){
+    do{
+        *nbloc=controllo_nbloc(v);
+    }while(*nbloc==-1);
+    do{
+        *rot=controllo_rot();
+    }while(*rot==-1);
+    do{
+        *pos=controllo_pos(m);
+    }while(*pos==-1);
 }
