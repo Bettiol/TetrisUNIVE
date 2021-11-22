@@ -66,9 +66,16 @@ void single_player();
 void multi_player();
 void player_cpu();
 
+
+void istruzioni();
+void cleaner();
+void grafica();
+
 int main() {
-    single_player();
+    //single_player();
     /* multi_player();*/
+
+    grafica();
 
     return 0;
 }
@@ -474,4 +481,31 @@ void controllo_input(int *rot, int *pos, int *nbloc, struct Blocco *v, struct Pi
     do{
         *pos=controllo_pos(m);
     }while(*pos==-1);
+}
+
+void cleaner() {
+    printf("\e[1;1H\e[2J");
+}
+
+void grafica() {
+
+    printf("Player 1");
+    printf("\t\t\t\t\t\t");
+    printf("Player 2\n");
+
+    printf("Punti P1: ");
+    printf("\t\t\t\t\t\t");
+    printf("Punti P2: \n");
+
+    int t;
+    scanf("%d", &t);
+    printf("%d", t);
+    cleaner();
+
+}
+
+void istruzioni() {
+
+    printf("\t\t\t\t\t\t");
+
 }
