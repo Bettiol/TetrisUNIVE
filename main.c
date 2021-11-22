@@ -490,11 +490,11 @@ void cleaner() {
 void grafica() {
 
     printf("Player 1");
-    printf("\t\t\t\t\t\t");
+    printf("\t\t\t\t\t\t\t\t\t");
     printf("Player 2\n");
 
     printf("Punti P1: ");
-    printf("\t\t\t\t\t\t");
+    printf("\t\t\t\t\t\t\t\t\t");
     printf("Punti P2: \n");
 
     int t;
