@@ -24,7 +24,6 @@
  * TO DO
  *  - Menù per la scelta della modalità
  *  - Grafica e messaggi di interazione
- *  - Controllo posizione del pezzo
  *  - Algoritmo per la CPU
  * */
 
@@ -47,6 +46,7 @@ void inizializza_matrice(struct Piano_Gioco *m);
 void stampa_matrice(struct Piano_Gioco m);
 void inizializza_blocchi(struct Blocco *blocchi);
 void stampa_colore(int colore);
+void stampa_matrici(struct Piano_Gioco m1, struct Piano_Gioco m2);
 
 int inserisci_blocco(struct Piano_Gioco *m, struct Blocco b);
 int caduta_blocco(struct Piano_Gioco *m, struct Blocco b, int piano);
@@ -57,9 +57,9 @@ int score_control(struct Piano_Gioco *m);
 void penalita(struct Piano_Gioco *m, int score);
 int fine_blocchi(struct Blocco *v);
 
-void controllo_input(int *rot, int *pos, int *nbloc, struct Blocco *v, struct Piano_Gioco m);
+void controllo_input(int *rot, int *pos, int *nbloc, struct Blocco *v);
 int controllo_rot();
-int controllo_pos(struct  Piano_Gioco m);
+int controllo_pos(struct Blocco b);
 int controllo_nbloc(struct Blocco *v);
 
 void single_player();
@@ -73,9 +73,9 @@ void grafica();
 
 int main() {
     //single_player();
-    /* multi_player();*/
+    multi_player();
 
-    grafica();
+    //grafica();
 
     return 0;
 }
@@ -91,8 +91,6 @@ void stampa_blocco(struct Blocco b){
 }
 
 void stampa_blocchi(struct  Blocco *b){
-    int i;
-
     if(b[0].num_blocchi>0)
         printf("blocco 0\t\trimanenti:%d\nrot: 0 \t\trot: 90 \trot: 180 \trot:270\n"RED"####\t\t#\t\t####\t\t#\n\t\t#\t\t\t\t#\n\t\t#\t\t\t\t#\n\t\t#\t\t\t\t#\n\n"WHT, b[0].num_blocchi);
     if(b[1].num_blocchi>0)
@@ -108,7 +106,8 @@ void stampa_blocchi(struct  Blocco *b){
     if(b[6].num_blocchi>0)
         printf("blocco 6\t\trimanenti:%d\nrot: 0 \t\trot: 90 \trot: 180 \trot:270\n"WHT" #\t\t#\t\t###\t\t #\n###\t\t##\t\t #\t\t##\n\t\t#\t\t\t\t #\n\n"WHT, b[6].num_blocchi);
 
-    /*for(i=0;i<N_BLOCCHI;i++){
+    /*int i;
+      for(i=0;i<N_BLOCCHI;i++){
         stampa_blocco(b[i]);
         printf("numero blocchi rimanenti -> %d\n",b[i].num_blocchi);
     }*/
@@ -163,6 +162,39 @@ void stampa_matrice(struct Piano_Gioco m){
         for (j = 0;  j<N_COLONNE ; j++) {
             printf("|");
             stampa_colore(m.matrice[i][j]);
+        }
+        printf("|\n");
+    }
+}
+
+void stampa_matrici(struct Piano_Gioco m1, struct Piano_Gioco m2){
+    int i, j;
+    printf("Player 1");
+    printf("\t\t\t\t\t\t\t\t\t");
+    printf("Player 2\n");
+
+    printf("Punti P1: %d", m1.score);
+    printf("\t\t\t\t\t\t\t\t\t");
+    printf("Punti P2: %d\n", m2.score);
+
+    for (j = 0;  j<N_COLONNE ; j++) {
+        printf("|%d",j);
+    }
+    printf("|\t\t\t\t\t\t\t\t\t");
+    for (j = 0;  j<N_COLONNE ; j++) {
+        printf("|%d",j);
+    }
+    printf("|\n");
+
+    for(i=0;i<N_RIGHE;i++){
+        for (j = 0;  j<N_COLONNE ; j++) {
+            printf("|");
+            stampa_colore(m1.matrice[i][j]);
+        }
+        printf("|\t\t\t\t\t\t\t\t\t");
+        for (j = 0;  j<N_COLONNE ; j++) {
+            printf("|");
+            stampa_colore(m2.matrice[i][j]);
         }
         printf("|\n");
     }
@@ -367,11 +399,12 @@ void single_player(){
         stampa_blocchi(blocchi);
         stampa_matrice(player1);
 
-        controllo_input(&rot,&pos_x,&n_blocco, &blocchi[0], player1);
+        controllo_input(&rot,&pos_x,&n_blocco, &blocchi[0]);
 
         blocchi[n_blocco].pos_x = pos_x;
         flip_blocco(&blocchi[n_blocco], rot);
         blocchi[n_blocco].num_blocchi--;
+
         perso=inserisci_blocco(&player1, blocchi[n_blocco]);
         fine= fine_blocchi(&blocchi[0]);
     }
@@ -391,12 +424,12 @@ void multi_player() {
         stampa_blocchi(blocchi);
         if (p == 0) {
             printf("p1\n");
-            stampa_matrice(player1);
-            controllo_input(&rot,&pos_x,&n_blocco, &blocchi[0], player1);
+            stampa_matrici(player1, player2);
+            controllo_input(&rot,&pos_x,&n_blocco, &blocchi[0]);
         } else {
             printf("p2\n");
-            stampa_matrice(player2);
-            controllo_input(&rot,&pos_x,&n_blocco, &blocchi[0], player2);
+            stampa_matrici(player1, player2);
+            controllo_input(&rot,&pos_x,&n_blocco, &blocchi[0]);
         }
 
         blocchi[n_blocco].pos_x = pos_x;
@@ -443,13 +476,28 @@ int controllo_rot(){
     return rot;
 }
 
-int controllo_pos(struct Piano_Gioco m){
+int controllo_pos(struct Blocco b){
     /*-1 valore non valido*/
     int pos=0;
+    int start_b=0, i, j;
     printf("posizione -> ");
     scanf("%d", &pos);
 
-    if(pos==-1)
+    for(i=0;i<4 && start_b==0;i++){
+        for(j=0;j<4 && start_b==0;j++){
+            if(b.forma[j][i]!=0){
+                start_b=i;
+            }
+        }
+    }
+
+    if(pos>=0 && pos<N_COLONNE){
+        pos=pos-start_b;
+    }else{
+        pos=-5;
+    }
+
+    if(pos==-5)
         printf("la posizione selezionata non è valida\n");
     return pos;
 }
@@ -471,7 +519,7 @@ int controllo_nbloc(struct Blocco *v){
     return nbloc;
 }
 
-void controllo_input(int *rot, int *pos, int *nbloc, struct Blocco *v, struct Piano_Gioco m){
+void controllo_input(int *rot, int *pos, int *nbloc, struct Blocco *v){
     do{
         *nbloc=controllo_nbloc(v);
     }while(*nbloc==-1);
@@ -479,8 +527,9 @@ void controllo_input(int *rot, int *pos, int *nbloc, struct Blocco *v, struct Pi
         *rot=controllo_rot();
     }while(*rot==-1);
     do{
-        *pos=controllo_pos(m);
-    }while(*pos==-1);
+        flip_blocco(&v[*nbloc], *rot);
+        *pos=controllo_pos(v[*nbloc]);
+    }while(*pos==-5);
 }
 
 void cleaner() {
