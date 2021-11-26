@@ -479,12 +479,12 @@ int controllo_rot(){
 int controllo_pos(struct Blocco b){
     /*-1 valore non valido*/
     int pos=0;
-    int start_b=0, i, j;
+    int start_b=-1, i, j;
     printf("posizione -> ");
     scanf("%d", &pos);
 
-    for(i=0;i<4 && start_b==0;i++){
-        for(j=0;j<4 && start_b==0;j++){
+    for(i=0;i<4 && start_b==-1;i++){
+        for(j=0;j<4 && start_b==-1;j++){
             if(b.forma[j][i]!=0){
                 start_b=i;
             }
