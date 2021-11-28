@@ -2,6 +2,27 @@
 #include "tetris_components.h"
 #include "tetris_print.h"
 #include "input_control.h"
+#include <stdlib.h>
+#include <string.h>
+
+#ifdef _WIN32
+#include <windows.h>
+int GetColumnWidth() {
+
+    CONSOLE_SCREEN_BUFFER_INFO info;
+    HANDLE out;
+
+    if (!(out = GetStdHandle(STD_OUTPUT_HANDLE)) ||
+        !GetConsoleScreenBufferInfo(out, &info))
+        return 80;
+    return info.dwSize.X;
+
+}
+#else
+int GetColumnWidth() {
+    return 200;
+}
+#endif
 
 /*
  * TO DO
@@ -28,12 +49,15 @@ void player_cpu();
 void istruzioni();
 void cleaner();
 void grafica();
+void centeredPrintf(char *s);
+int interazioneScelta();
+void menu();
 
 int main() {
     //single_player();
-    multi_player();
+    //multi_player();
 
-    //grafica();
+    menu();
 
     return 0;
 }
@@ -207,7 +231,7 @@ int fine_blocchi(struct Blocco *v){
 }
 
 void cleaner() {
-    printf("\e[1;1H\e[2J");
+    system("CLEAR");
 }
 
 void grafica() {
@@ -227,8 +251,60 @@ void grafica() {
 
 }
 
+_Noreturn void menu() {
+
+    char titolo[] = "TermTris";
+    char modalita1[] = "1) Single Player";
+    char modalita2[] = "2) Multiplayer Player";
+    char help[] = "9) Help";
+    int scelta;
+
+
+    centeredPrintf(titolo);
+
+    printf("\n");
+    printf("\n");
+    printf("\n");
+
+    centeredPrintf(modalita1);
+    centeredPrintf(modalita2);
+    printf("\n");
+    centeredPrintf(help);
+
+    scelta = interazioneScelta();
+
+    printf("Scelta effetuata  %d", scelta);
+
+
+
+}
+
 void istruzioni() {
 
     printf("\t\t\t\t\t\t");
+
+}
+
+int interazioneScelta() {
+
+    int scelta = 0;
+
+    do {
+
+        printf("Inserire l'opzione desiderata --> ");
+        scanf("%d", &scelta);
+
+    } while (scelta != 1 || scelta != 2 || scelta != 9);
+
+    return scelta;
+}
+
+void centeredPrintf(char *s) {
+
+    int total_width = GetColumnWidth();
+    int s_width = strlen(s);
+    int field_width = (total_width - s_width) / 2 + s_width;
+
+    printf("%*s\n", field_width, s);
 
 }

@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include "tetris_components.h"
+#include <stdlib.h>
 
 /*1*/
 #define RED "\e[0;31m"
@@ -115,6 +116,8 @@ void stampa_matrici(struct Piano_Gioco m1, struct Piano_Gioco m2){
         }
         printf("|\n");
     }
+
+
 }
 
 int inserisci_bloccco_posizione(struct Piano_Gioco *m, struct Blocco b, int piano){
