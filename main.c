@@ -46,7 +46,7 @@ void multi_player();
 void player_cpu();
 
 
-void istruzioni();
+int help();
 void cleaner();
 void grafica();
 void centeredPrintf(char *s);
@@ -57,7 +57,28 @@ int main() {
     //multi_player();
 
     int scelta = menu();
-    printf("Scelta effetuata  %d", scelta);
+    int aiuto;
+
+    switch (scelta) {
+
+        case 1:
+
+            single_player();
+
+            break;
+
+        case 2:
+
+            multi_player();
+
+            break;
+
+        case 9:
+
+            aiuto = help();
+
+            break;
+    }
 
     return 0;
 }
@@ -257,7 +278,7 @@ int menu() {
     char modalita1[] = "1) Single Player";
     char modalita2[] = "2) Multiplayer Player";
     char help[] = "9) Help";
-    int scelta = 0;
+    int scelta;
 
 
     centeredPrintf(titolo);
@@ -274,17 +295,47 @@ int menu() {
     do {
 
         printf("Inserire il numero corrispondente all'opzione desisderata --> ");
-        scanf("%d", scelta);
+        scanf("%d", &scelta);
 
-    } while (scelta != 1 || scelta != 2 || scelta != 9);
+    } while (scelta != 1 && scelta != 2 && scelta != 9);
 
     return scelta;
 
 }
 
-void istruzioni() {
+int help() {
 
-    printf("\t\t\t\t\t\t");
+    char titolo[] = "TermTris - Help";
+    char help1[] = "1) Modalità";
+    char help2[] = "2) Pezzi";
+    char help3[] = "3) Help";
+    char help4[] = "4) Punteggi";
+    char help5[] = "5) Regole";
+
+    int scelta;
+
+
+    centeredPrintf(titolo);
+
+    printf("\n");
+    printf("\n");
+    printf("\n");
+
+    centeredPrintf(help1);
+    centeredPrintf(help2);
+    centeredPrintf(help3);
+    centeredPrintf(help4);
+    centeredPrintf(help5);
+
+    do {
+
+        printf("Inserire il numero corrispondente all'opzione desiderata --> ");
+        scanf("%d", &scelta);
+
+    } while (scelta != 1 && scelta != 2 && scelta != 3 && scelta != 4 && scelta != 5);
+
+    return scelta;
+
 
 }
 
