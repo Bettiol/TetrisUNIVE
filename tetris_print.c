@@ -119,19 +119,3 @@ void stampa_matrici(struct Piano_Gioco m1, struct Piano_Gioco m2){
 
 
 }
-
-int inserisci_bloccco_posizione(struct Piano_Gioco *m, struct Blocco b, int piano){
-    int i, j;
-    int perso=0;
-    for(i=3;i>=0 && perso==0;i--) {
-        for (j = 0; j < 4 && perso==0; j++) {
-            if(piano-(3-i)>=0 && b.pos_x+j<N_COLONNE &&  b.pos_x+j>=0) {
-                /*sostituisco i blocchi vuoti del piano di gioco con i nuovi valori del blocco*/
-                if (piano - i % 3 >= 0 && m->matrice[piano - (3 - i)][b.pos_x + j] == 0)
-                    m->matrice[piano - (3 - i)][b.pos_x + j] = b.forma[i][j];
-            }else if(piano-(3-i)<0 && b.forma[i][j]!=0)
-                perso=1;
-        }
-    }
-    return perso;
-}
