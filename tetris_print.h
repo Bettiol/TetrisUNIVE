@@ -6,5 +6,9 @@ void stampa_blocchi(struct  Blocco *b);
 void stampa_matrice(struct Piano_Gioco m);
 void stampa_colore(int colore);
 void stampa_matrici(struct Piano_Gioco m1, struct Piano_Gioco m2);
+int help();
+void cleaner();
+void centeredPrintf(char *s);
+int menu();
 
 #endif //TETRISUNIVE_TETRIS_PRINT_H
