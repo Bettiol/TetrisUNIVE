@@ -10,5 +10,6 @@ int help();
 void cleaner();
 void centeredPrintf(char *s);
 int menu();
+void cleaner();
 
 #endif //TETRISUNIVE_TETRIS_PRINT_H

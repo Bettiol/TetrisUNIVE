@@ -21,7 +21,6 @@ void player_cpu();
 
 
 int help();
-void cleaner();
 void grafica();
 void centeredPrintf(char *s);
 int menu();
@@ -141,23 +140,4 @@ void player_cpu(){
     }
 }
 
-void cleaner() {
-    system("CLEAR");
-}
 
-void grafica() {
-
-    printf("Player 1");
-    printf("\t\t\t\t\t\t\t\t\t");
-    printf("Player 2\n");
-
-    printf("Punti P1: ");
-    printf("\t\t\t\t\t\t\t\t\t");
-    printf("Punti P2: \n");
-
-    int t;
-    scanf("%d", &t);
-    printf("%d", t);
-    cleaner();
-
-}

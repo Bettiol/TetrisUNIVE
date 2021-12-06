@@ -216,5 +216,8 @@ int help() {
 
     return scelta;
 
+}
 
+void cleaner() {
+    system("CLEAR");
 }
