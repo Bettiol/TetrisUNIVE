@@ -29,7 +29,7 @@ int inserisci_blocco(struct Piano_Gioco *m, struct Blocco b){
     int perso;
     perso=caduta_blocco(m,b,0);
     if(perso==1){
-        printf("hai perso coglione AHAHAHAHAHAH \n\n");
+        printf("HAI PERSO!\n\n");
     }
     score_control(m);
     return perso;
@@ -40,7 +40,7 @@ int inserisci_blocco_multi(struct Piano_Gioco *m1, struct Piano_Gioco *m2, struc
     int score;
     perso=caduta_blocco(m1,b,0);
     if(perso==1){
-        printf("hai perso coglione AHAHAHAHAHAH \n\n");
+        printf("HAI PERSO! \n\n");
     }
     score= score_control(m1);
     penalita(m2, score);
@@ -113,7 +113,7 @@ int fine_blocchi(struct Blocco *v){
             fine=0;
     }
     if(fine==1){
-        printf("hai finito i blocchi AHAHAHAHAHAH\n\n");
+        printf("HAI FINITO I BLOCCHI\n\n");
     }
     return fine;
 }

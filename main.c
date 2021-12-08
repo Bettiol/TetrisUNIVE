@@ -4,8 +4,6 @@
 #include "input_control.h"
 #include "tetris_operations.h"
 #include "NPC_tetris.h"
-#include <stdlib.h>
-#include <string.h>
 
 /*
  * TO DO
@@ -19,9 +17,6 @@ void single_player();
 void multi_player();
 void player_cpu();
 
-
-int help();
-void grafica();
 void centeredPrintf(char *s);
 int menu();
 
@@ -98,11 +93,11 @@ void multi_player() {
     while (perso == 0) {
         stampa_blocchi(blocchi);
         if (p == 0) {
-            printf("p1\n");
+            printf("P1\n");
             stampa_matrici(player1, player2);
             controllo_input(&rot,&pos_x,&n_blocco, &blocchi[0]);
         } else {
-            printf("p2\n");
+            printf("P2\n");
             stampa_matrici(player1, player2);
             controllo_input(&rot,&pos_x,&n_blocco, &blocchi[0]);
         }

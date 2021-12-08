@@ -2,6 +2,11 @@
 #include "tetris_components.h"
 #include "tetris_operations.h"
 
+#define NNVALIDO -1
+#define BLOCCHIFINITI -2
+#define SPORGEDX -5
+#define SPORGESX -6
+
 int gap(struct Piano_Gioco p){
     int score_gap=0;
     int max_h=-1;
@@ -54,9 +59,9 @@ int control_pos(struct Blocco b, int pos){
         if(pos<N_COLONNE-finish_b+1)
             pos=pos-start_b;
         else
-            pos=-5;
+            pos=SPORGEDX;
     }else{
-        pos=-6;
+        pos=SPORGESX;
     }
     return pos;
 }
@@ -66,9 +71,9 @@ int control_nbloc(struct Blocco *v, int nbloc){
      *-2 blocchi finiti*/
     if(nbloc>=0 && nbloc<N_BLOCCHI){
         if(v[nbloc].num_blocchi<=0)
-            nbloc=-2;
+            nbloc=BLOCCHIFINITI;
     }else{
-        nbloc=-1;
+        nbloc=NNVALIDO;
     }
     return nbloc;
 }
@@ -82,7 +87,7 @@ int control_rot(int rot, int n_block){
     if((n_block==2 || n_block==3 || n_block==6) && rot <=3)
         return rot;
     else
-        return -1;
+        return NNVALIDO;
 }
 
 int score_play(struct Blocco *v, struct Piano_Gioco p, int depth, int pos, int rot, int nbloc){

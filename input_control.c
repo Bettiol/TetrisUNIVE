@@ -4,7 +4,7 @@
 int controllo_rot(){
     /*-1 valore non valido*/
     int rot=0;
-    printf("rotazione -> ");
+    printf("Inserire la rotazione del blocco --> ");
     scanf("%d", &rot);
     if(rot==0)
         rot=0;
@@ -18,7 +18,7 @@ int controllo_rot(){
         rot=-1;
 
     if(rot==-1)
-        printf("la rotazione selezionata non esiste\n");
+        printf("La rotazione selezionata non esiste! (0, 90, 180, 270)\n");
     return rot;
 }
 
@@ -26,7 +26,7 @@ int controllo_pos(struct Blocco b){
     /*-1 valore non valido*/
     int pos=0;
     int start_b=-5,finish_b=4, count, i, j;
-    printf("posizione -> ");
+    printf("Inserire la posizione in cui posizionare il blocco --> ");
     scanf("%d", &pos);
 
     for(i=0;i<4;i++){
@@ -47,14 +47,14 @@ int controllo_pos(struct Blocco b){
     }
 
     if(pos==-5)
-        printf("la posizione selezionata non è valida\n");
+        printf("La posizionata non è valida!\n");
     return pos;
 }
 
 int controllo_nbloc(struct Blocco *v){
     /*-1 valore non valido*/
     int nbloc=0;
-    printf("blocco -> ");
+    printf("Inserire il blocco desiderato --> ");
     scanf("%d", &nbloc);
     if(nbloc>=0 && nbloc<N_BLOCCHI){
         if(v[nbloc].num_blocchi<=0)
@@ -64,7 +64,7 @@ int controllo_nbloc(struct Blocco *v){
     }
 
     if(nbloc==-1)
-        printf("il blocco selezionato non esiste\n");
+        printf("Il blocco selezionato non esiste!\n");
     return nbloc;
 }
 

@@ -37,6 +37,15 @@ int GetColumnWidth() {
 /*7*/
 #define WHT "\e[0;37m"
 
+
+#define BLOCCO0 "BLOCCO 0\t\tRIMANENTI:%d\nROT: 0 \t\tROT: 90 \tROT: 180 \tROT:270\n"RED"####\t\t#\t\t####\t\t#\n\t\t#\t\t\t\t#\n\t\t#\t\t\t\t#\n\t\t#\t\t\t\t#\n\n"WHT
+#define BLOCCO1 "BLOCCO 1\t\tRIMANENTI:%d\nROT: 0 \t\tROT: 90 \tROT: 180 \tROT:270\n"GRN"##\t\t##\t\t##\t\t##\n##\t\t##\t\t##\t\t##\n\n"WHT
+#define BLOCCO2 "BLOCCO 2\t\tRIMANENTI:%d\nROT: 0 \t\tROT: 90 \tROT: 180 \tROT:270\n"YEL"#\t\t##\t\t###\t\t #\n###\t\t#\t\t  #\t\t #\n\t\t#\t\t\t\t##\n\n"WHT
+#define BLOCCO3 "BLOCCO 3\t\tRIMANENTI:%d\nROT: 0 \t\tROT: 90 \tROT: 180 \tROT:270\n"BLU"  #\t\t#\t\t###\t\t##\n###\t\t#\t\t#\t\t #\n\t\t##\t\t\t\t #\n\n"WHT
+#define BLOCCO4 "BLOCCO 4\t\tRIMANENTI:%d\nROT: 0 \t\tROT: 90 \tROT: 180 \tROT:270\n"MAG" ##\t\t#\t\t ##\t\t#\n##\t\t##\t\t##\t\t##\n\t\t #\t\t\t\t #\n\n"WHT
+#define BLOCCO5 "BLOCCO 5\t\tRIMANENTI:%d\nROT: 0 \t\tROT: 90 \tROT: 180 \tROT:270\n"CYN"##\t\t #\t\t##\t\t #\n ##\t\t##\t\t ##\t\t##\n\t\t#\t\t\t\t#\n\n"WHT
+#define BLOCCO6 "BLOCCO 6\t\tRIMANENTI:%d\nROT: 0 \t\tROT: 90 \tROT: 180 \tROT:270\n"WHT" #\t\t#\t\t###\t\t #\n###\t\t##\t\t #\t\t##\n\t\t#\t\t\t\t #\n\n"WHT
+
 void stampa_colore(int colore){
     if(colore==1)
         printf(RED"#"WHT);
@@ -67,25 +76,26 @@ void stampa_blocco(struct Blocco b){
 }
 
 void stampa_blocchi(struct  Blocco *b){
+
     if(b[0].num_blocchi>0)
-        printf("blocco 0\t\trimanenti:%d\nrot: 0 \t\trot: 90 \trot: 180 \trot:270\n"RED"####\t\t#\t\t####\t\t#\n\t\t#\t\t\t\t#\n\t\t#\t\t\t\t#\n\t\t#\t\t\t\t#\n\n"WHT, b[0].num_blocchi);
+        printf(BLOCCO0, b[0].num_blocchi);
     if(b[1].num_blocchi>0)
-        printf("blocco 1\t\trimanenti:%d\nrot: 0 \t\trot: 90 \trot: 180 \trot:270\n"GRN"##\t\t##\t\t##\t\t##\n##\t\t##\t\t##\t\t##\n\n"WHT, b[1].num_blocchi);
+        printf(BLOCCO1, b[1].num_blocchi);
     if(b[2].num_blocchi>0)
-        printf("blocco 2\t\trimanenti:%d\nrot: 0 \t\trot: 90 \trot: 180 \trot:270\n"YEL"#\t\t##\t\t###\t\t #\n###\t\t#\t\t  #\t\t #\n\t\t#\t\t\t\t##\n\n"WHT, b[2].num_blocchi);
+        printf(BLOCCO2, b[2].num_blocchi);
     if(b[3].num_blocchi>0)
-        printf("blocco 3\t\trimanenti:%d\nrot: 0 \t\trot: 90 \trot: 180 \trot:270\n"BLU"  #\t\t#\t\t###\t\t##\n###\t\t#\t\t#\t\t #\n\t\t##\t\t\t\t #\n\n"WHT, b[3].num_blocchi);
+        printf(BLOCCO3, b[3].num_blocchi);
     if(b[4].num_blocchi>0)
-        printf("blocco 4\t\trimanenti:%d\nrot: 0 \t\trot: 90 \trot: 180 \trot:270\n"MAG" ##\t\t#\t\t ##\t\t#\n##\t\t##\t\t##\t\t##\n\t\t #\t\t\t\t #\n\n"WHT, b[4].num_blocchi);
+        printf(BLOCCO4, b[4].num_blocchi);
     if(b[5].num_blocchi>0)
-        printf("blocco 5\t\trimanenti:%d\nrot: 0 \t\trot: 90 \trot: 180 \trot:270\n"CYN"##\t\t #\t\t##\t\t #\n ##\t\t##\t\t ##\t\t##\n\t\t#\t\t\t\t#\n\n"WHT, b[5].num_blocchi);
+        printf(BLOCCO5, b[5].num_blocchi);
     if(b[6].num_blocchi>0)
-        printf("blocco 6\t\trimanenti:%d\nrot: 0 \t\trot: 90 \trot: 180 \trot:270\n"WHT" #\t\t#\t\t###\t\t #\n###\t\t##\t\t #\t\t##\n\t\t#\t\t\t\t #\n\n"WHT, b[6].num_blocchi);
+        printf(BLOCCO6, b[6].num_blocchi);
 
     /*int i;
       for(i=0;i<N_BLOCCHI;i++){
         stampa_blocco(b[i]);
-        printf("numero blocchi rimanenti -> %d\n",b[i].num_blocchi);
+        printf("numero blocchi RIMANENTI -> %d\n",b[i].num_blocchi);
     }*/
 }
 
