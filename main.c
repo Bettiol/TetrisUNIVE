@@ -135,4 +135,36 @@ void player_cpu(){
     }
 }
 
+/*void player_cpu(){
+    struct Blocco blocchi[N_BLOCCHI];
+    struct Piano_Gioco player1;
+    struct Piano_Gioco player2;
+    int n_blocco, pos_x, rot, perso = 0, p = 0;
+
+    inizializza_matrice(&player1);
+    inizializza_matrice(&player2);
+    inizializza_blocchi(&blocchi[0]);
+
+    while (perso == 0) {
+        stampa_blocchi(blocchi);
+        if (p == 0) {
+            printf("P1\n");
+            stampa_matrici(player1, player2);
+            controllo_input(&rot,&pos_x,&n_blocco, &blocchi[0]);
+        } else {
+            printf("P2\n");
+            stampa_matrici(player1, player2);
+            pos_x= choose_block(&n_blocco,&rot,&blocchi[0],player2);
+        }
+
+        blocchi[n_blocco].pos_x = pos_x;
+        blocchi[n_blocco].num_blocchi--;
+        flip_blocco(&blocchi[n_blocco], rot);
+        if (p == 0)
+            perso = inserisci_blocco_multi(&player1, &player2, blocchi[n_blocco]);
+        else
+            perso = inserisci_blocco_multi(&player2, &player1, blocchi[n_blocco]);
+        p = (p + 1) % 2;
+    }
+}*/
 
