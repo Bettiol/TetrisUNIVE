@@ -127,6 +127,28 @@ int score_play(struct Blocco *v, struct Piano_Gioco p, int depth, int pos, int r
     }
 }
 
+int top_play(int score, struct Blocco *v){
+    int i, end=0;
+    if(score==12){
+        return 1;
+    }
+    for(i=0;i<N_BLOCCHI;i++){
+        if(v[i].num_blocchi==0){
+            end++;
+        }
+    }
+    if(end>0 && score==6){
+        return 1;
+    }
+    if(end>1 && score==3){
+        return 1;
+    }
+    if(end>2 && score==1){
+        return 1;
+    }
+    return 0;
+}
+
 int choose_block(int *n_block, int *rot, struct Blocco *v, struct Piano_Gioco p){
     int c_block, c_rot, c_pos, pos;
     int score, score_max=0, top=0;
@@ -149,12 +171,13 @@ int choose_block(int *n_block, int *rot, struct Blocco *v, struct Piano_Gioco p)
                             struct Piano_Gioco copy= p_copia(p);
                             v[c_block].pos_x = app_pos;
                             score = inserisci_blocco_score(&copy, v[c_block]);
-                            if(score==12){
+                            if(top_play(score, v)==1){
                                 top=1;
                                 *n_block = c_block;
                                 *rot = c_rot;
                                 pos = app_pos;
-                            }else {
+                            }
+                            else {
                                 score += score_play(v, copy, 2, 0, 0, 0);
                                 if (score > score_max) {
                                     score_max = score;

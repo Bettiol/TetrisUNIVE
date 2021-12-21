@@ -113,7 +113,7 @@ void multi_player() {
     }
 }
 
-void player_cpu(){
+/*void player_cpu(){
     struct Blocco blocchi[N_BLOCCHI];
     struct Piano_Gioco player1;
     int n_blocco, pos_x, rot, perso=0, fine=0;
@@ -133,9 +133,9 @@ void player_cpu(){
         perso=inserisci_blocco(&player1, blocchi[n_blocco]);
         fine= fine_blocchi(&blocchi[0]);
     }
-}
+}*/
 
-/*void player_cpu(){
+void player_cpu(){
     struct Blocco blocchi[N_BLOCCHI];
     struct Piano_Gioco player1;
     struct Piano_Gioco player2;
@@ -166,5 +166,5 @@ void player_cpu(){
             perso = inserisci_blocco_multi(&player2, &player1, blocchi[n_blocco]);
         p = (p + 1) % 2;
     }
-}*/
+}
 
