@@ -57,6 +57,9 @@ int main() {
     return 0;
 }
 
+/**
+ * gestisce tutte le operazioni per un game in modalità single_player
+ */
 void single_player(){
     struct Blocco blocchi[N_BLOCCHI];
     struct Piano_Gioco player1;
@@ -80,6 +83,9 @@ void single_player(){
     }
 }
 
+/**
+ * gestisce tutte le operazioni per un game in modalità multi_player
+ */
 void multi_player() {
     struct Blocco blocchi[N_BLOCCHI];
     struct Piano_Gioco player1;
@@ -135,6 +141,9 @@ void multi_player() {
     }
 }*/
 
+/**
+ * gestisce tutte le operazioni per un game in modalità player contro CPU
+ */
 void player_cpu(){
     struct Blocco blocchi[N_BLOCCHI];
     struct Piano_Gioco player1;

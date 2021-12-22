@@ -7,27 +7,11 @@
 #define SPORGEDX -5
 #define SPORGESX -6
 
-int gap(struct Piano_Gioco p){
-    int score_gap=0;
-    int max_h=-1;
-    int i, j;
-    for(i=0;i<N_RIGHE && max_h==-1;i++){
-        for(j=0;j<N_COLONNE && max_h==-1;j++) {
-            if(p.matrice[i][j]!=0){
-                max_h=i;
-            }
-        }
-    }
-
-    for(i=max_h;i<N_RIGHE;i++){
-        for(j=0;j<N_COLONNE;j++){
-            if(p.matrice[i][j]==0)
-                score_gap++;
-        }
-    }
-    return score_gap;
-}
-
+/**
+ * effettua una deep copy di un piano di gioco
+ * @param p piano di gioco
+ * @return deep copy del piano di gioco
+ */
 struct Piano_Gioco p_copia(struct  Piano_Gioco p){
     struct Piano_Gioco p_copia;
     int i, j;
@@ -39,9 +23,13 @@ struct Piano_Gioco p_copia(struct  Piano_Gioco p){
     return p_copia;
 }
 
+/**
+ * controlla la posizione del tetramino da inserire
+ * @param b tetramino
+ * @param pos posizione
+ * @return la posizioni o eventuali errori SPORGEDX o SPORGESX
+ */
 int control_pos(struct Blocco b, int pos){
-    /*-5 valore sporge a destra
-     * -6 valore sporge a sinistra*/
     int start_b=-5,finish_b=4, count, i, j;
 
     for(i=0;i<4;i++){
@@ -66,6 +54,12 @@ int control_pos(struct Blocco b, int pos){
     return pos;
 }
 
+/**
+ * controlla il numero del tetramino da inserire
+ * @param v vettore contenente la descrizione dei tetramini
+ * @param nbloc il numero del tetramino
+ * @return il numero del tetramino o eventuali errori NNVALIDO o BLOCCHIFINITI
+ */
 int control_nbloc(struct Blocco *v, int nbloc){
     /*-1 valore non valido
      *-2 blocchi finiti*/
@@ -78,6 +72,12 @@ int control_nbloc(struct Blocco *v, int nbloc){
     return nbloc;
 }
 
+/**
+ * controlla la rotazione del tetramino da inserire
+ * @param rot rotazione
+ * @param n_block numero del tetramino
+ * @return la rotazione o eventuale errore NNVALIDO
+ */
 int control_rot(int rot, int n_block){
     /*-1 valore non valido*/
     if((n_block==0 || n_block==4 || n_block==5) && rot <=1)
@@ -90,6 +90,16 @@ int control_rot(int rot, int n_block){
         return NNVALIDO;
 }
 
+/**
+ * scorre l'albero di gioco e ne calcola il punteggio complessivo
+ * @param v vettore contenente la descrizione dei tetramini
+ * @param p piano di gioco
+ * @param depth profondità dell'albero
+ * @param pos posizione
+ * @param rot rotazione
+ * @param nbloc numero del blocco
+ * @return il punteggio
+ */
 int score_play(struct Blocco *v, struct Piano_Gioco p, int depth, int pos, int rot, int nbloc){
     int errore;
     if(depth==0){
@@ -127,6 +137,12 @@ int score_play(struct Blocco *v, struct Piano_Gioco p, int depth, int pos, int r
     }
 }
 
+/**
+ * identifica se il tetramino selezionato rappresenta la mossa migliore
+ * @param score punteggio effettuato
+ * @param v vettore contenente la descrizione dei tetramini
+ * @return 1 se è la mossa migliore, 0 altrimenti
+ */
 int top_play(int score, struct Blocco *v){
     int i, end=0;
     if(score==12){
@@ -149,6 +165,14 @@ int top_play(int score, struct Blocco *v){
     return 0;
 }
 
+/**
+ * verifica quale tetramino, in quele rotazione e in quale posizione effettua un punteggio maggiore
+ * @param n_block numero del blocco
+ * @param rot rotazione
+ * @param v vettore contenente la descrizione dei tetramini
+ * @param p piano di gioco
+ * @return posizione
+ */
 int choose_block(int *n_block, int *rot, struct Blocco *v, struct Piano_Gioco p){
     int c_block, c_rot, c_pos, pos;
     int score, score_max=0, top=0;
