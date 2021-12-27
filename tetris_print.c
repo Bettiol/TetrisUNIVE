@@ -149,6 +149,16 @@ void stampa_matrici(struct Piano_Gioco m1, struct Piano_Gioco m2){
 
 }
 
+void stampa_score(int p1, int p2){
+    printf("score P1 -> %d\t\t\t score P2 -> %d\n", p1, p2);
+    if(p1>p2)
+        printf("HA VINTO P1\n");
+    else if(p2>p1)
+        printf("HA VINTO P2\n");
+    else
+        printf("PAREGGIO\n");
+}
+
 /*--------------------------------------------------------------------------------------------------------------------*/
 void centeredPrintf(char *s) {
 

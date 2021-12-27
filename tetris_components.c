@@ -79,47 +79,48 @@ void inizializza_matrice(struct Piano_Gioco *m){
  * @param blocchi vettore da inizializzare
  */
 void inizializza_blocchi(struct Blocco *blocchi){
+    int num_blocchi=20;
     struct Blocco linea={
             {1,1,1,1,0,0,0,0,0,0,0,0},
             0,
             0,
-            20,
+            num_blocchi,
     };
     struct Blocco quadrato={
             {2,2,0,0,2,2,0,0,0,0,0,0},
             0,
             0,
-            20,
+            num_blocchi,
     };
     struct Blocco l_sinistra={
             {3,0,0,0,3,3,3,0,0,0,0,0},
             0,
             0,
-            20,
+            num_blocchi,
     };
     struct Blocco l_destra={
             {0,0,4,0,4,4,4,0,0,0,0,0},
             0,
             0,
-            20,
+            num_blocchi,
     };
     struct Blocco s_sinistra={
             {0,5,5,0,5,5,0,0,0,0,0,0},
             0,
             0,
-            20,
+            num_blocchi,
     };
     struct Blocco s_destra={
             {6,6,0,0,0,6,6,0,0,0,0,0},
             0,
             0,
-            20,
+            num_blocchi,
     };
     struct Blocco t_rov={
             {0,7,0,0,7,7,7,0,0,0,0,0},
             0,
             0,
-            20,
+            num_blocchi,
     };
 
     blocchi[0]=linea;

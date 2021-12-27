@@ -90,15 +90,15 @@ void multi_player() {
     struct Blocco blocchi[N_BLOCCHI];
     struct Piano_Gioco player1;
     struct Piano_Gioco player2;
-    int n_blocco, pos_x, rot, perso = 0, p = 0;
+    int n_blocco, pos_x, rot, perso = 0, turno = 0, fine=0;
 
     inizializza_matrice(&player1);
     inizializza_matrice(&player2);
     inizializza_blocchi(&blocchi[0]);
 
-    while (perso == 0) {
+    while (perso == 0 && fine==0) {
         stampa_blocchi(blocchi);
-        if (p == 0) {
+        if (turno == 0) {
             printf("P1\n");
             stampa_matrici(player1, player2);
             controllo_input(&rot,&pos_x,&n_blocco, &blocchi[0]);
@@ -111,12 +111,15 @@ void multi_player() {
         blocchi[n_blocco].pos_x = pos_x;
         blocchi[n_blocco].num_blocchi--;
         flip_blocco(&blocchi[n_blocco], rot);
-        if (p == 0)
+        if (turno == 0)
             perso = inserisci_blocco_multi(&player1, &player2, blocchi[n_blocco]);
         else
             perso = inserisci_blocco_multi(&player2, &player1, blocchi[n_blocco]);
-        p = (p + 1) % 2;
+        fine= fine_blocchi(&blocchi[0]);
+        turno = (turno + 1) % 2;
     }
+    if(fine!=0)
+        stampa_score(player1.score, player2.score);
 }
 
 /*void player_cpu(){
@@ -148,18 +151,19 @@ void player_cpu(){
     struct Blocco blocchi[N_BLOCCHI];
     struct Piano_Gioco player1;
     struct Piano_Gioco player2;
-    int n_blocco, pos_x, rot, perso = 0, p = 0;
+    int n_blocco, pos_x, rot, perso = 0, turno = 0, fine=0;
 
     inizializza_matrice(&player1);
     inizializza_matrice(&player2);
     inizializza_blocchi(&blocchi[0]);
 
-    while (perso == 0) {
+    while (perso == 0 && fine==0) {
         stampa_blocchi(blocchi);
-        if (p == 0) {
+        if (turno == 0) {
             printf("P1\n");
             stampa_matrici(player1, player2);
             controllo_input(&rot,&pos_x,&n_blocco, &blocchi[0]);
+            //pos_x= choose_block(&n_blocco,&rot,&blocchi[0],player1);
         } else {
             printf("P2\n");
             stampa_matrici(player1, player2);
@@ -169,11 +173,14 @@ void player_cpu(){
         blocchi[n_blocco].pos_x = pos_x;
         blocchi[n_blocco].num_blocchi--;
         flip_blocco(&blocchi[n_blocco], rot);
-        if (p == 0)
+        if (turno == 0)
             perso = inserisci_blocco_multi(&player1, &player2, blocchi[n_blocco]);
         else
             perso = inserisci_blocco_multi(&player2, &player1, blocchi[n_blocco]);
-        p = (p + 1) % 2;
+        fine= fine_blocchi(&blocchi[0]);
+        turno = (turno + 1) % 2;
     }
+    if(fine!=0)
+        stampa_score(player1.score, player2.score);
 }
 
