@@ -134,7 +134,7 @@ int score_control(struct Piano_Gioco *m){
  * @param m piano di gioco avversario
  * @param score punteggio effettuato
  */
-void penalita(struct Piano_Gioco *m, int score){
+/*void penalita(struct Piano_Gioco *m, int score){
     int i;
     int app;
     if(score>=6){
@@ -142,6 +142,29 @@ void penalita(struct Piano_Gioco *m, int score){
             app=m->matrice[N_RIGHE-1][i];
             m->matrice[N_RIGHE-1][i]=m->matrice[N_RIGHE-2][i];
             m->matrice[N_RIGHE-2][i]=app;
+        }
+    }
+}*/
+
+void penalita(struct Piano_Gioco *m, int score){
+    int i, j;
+    if(score==6){
+        for(i=N_RIGHE-3; i<N_RIGHE;i++){
+            for(j=0;j<N_COLONNE;j++){
+                if(m->matrice[i][j]!=0)
+                    m->matrice[i][j] = 0;
+                else
+                    m->matrice[i][j] = 8;
+            }
+        }
+    }else if(score==12){
+        for(i=N_RIGHE-4; i<N_RIGHE;i++){
+            for(j=0;j<N_COLONNE;j++){
+                if(m->matrice[i][j]!=0)
+                    m->matrice[i][j] = 0;
+                else
+                    m->matrice[i][j] = 8;
+            }
         }
     }
 }

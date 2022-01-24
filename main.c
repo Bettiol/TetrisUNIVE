@@ -162,8 +162,8 @@ void player_cpu(){
         if (turno == 0) {
             printf("P1\n");
             stampa_matrici(player1, player2);
-            controllo_input(&rot,&pos_x,&n_blocco, &blocchi[0]);
-            //pos_x= choose_block(&n_blocco,&rot,&blocchi[0],player1);
+            //controllo_input(&rot,&pos_x,&n_blocco, &blocchi[0]);
+            pos_x= choose_block(&n_blocco,&rot,&blocchi[0],player1);
         } else {
             printf("P2\n");
             stampa_matrici(player1, player2);
