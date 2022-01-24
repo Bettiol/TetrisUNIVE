@@ -1,31 +1,26 @@
-#include <stdio.h>
+#include "main.h"
 #include "tetris_components.h"
 #include "tetris_print.h"
 #include "input_control.h"
 #include "tetris_operations.h"
 #include "NPC_tetris.h"
 
-/*
- * TO DO
- *  - Menù per la scelta della modalità
- *  - Grafica e messaggi di interazione
- *  - Algoritmo per la CPU
- * */
-
-
-void single_player();
-void multi_player();
-void player_cpu();
-
-void centeredPrintf(char *s);
-int menu();
-
+/**
+ * @file main.c
+ * @mainpage main PI program
+ * @section intro_sec Introduzione
+ *
+ * Questa è una piccola introduzione, tipo la consegna e le specifiche del
+ * programma.
+ *
+ * @section install_sec Installazione
+ * Qui abbiamo creato una nuova sezione dove possiamo scrivere
+ * le istruzioni per installare il programma
+ * @subsection step1 Step 1: Installa gcc
+ */
 int main() {
-    //single_player();
-    //multi_player();
 
     int scelta = menu();
-    int aiuto;
 
     switch (scelta) {
 
@@ -47,19 +42,11 @@ int main() {
 
             break;
 
-        case 9:
-
-            aiuto = help();
-
-            break;
     }
 
     return 0;
 }
 
-/**
- * gestisce tutte le operazioni per un game in modalità single_player
- */
 void single_player(){
     struct Blocco blocchi[N_BLOCCHI];
     struct Piano_Gioco player1;
@@ -83,9 +70,6 @@ void single_player(){
     }
 }
 
-/**
- * gestisce tutte le operazioni per un game in modalità multi_player
- */
 void multi_player() {
     struct Blocco blocchi[N_BLOCCHI];
     struct Piano_Gioco player1;
@@ -144,9 +128,6 @@ void multi_player() {
     }
 }*/
 
-/**
- * gestisce tutte le operazioni per un game in modalità player contro CPU
- */
 void player_cpu(){
     struct Blocco blocchi[N_BLOCCHI];
     struct Piano_Gioco player1;
