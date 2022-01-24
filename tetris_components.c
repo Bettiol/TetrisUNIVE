@@ -20,11 +20,6 @@ struct Piano_Gioco{
     int score;
 };
 
-/**
- * routa un tetramino
- * @param b tetramino da ruotare
- * @param rot rotazione
- */
 void flip_blocco(struct Blocco *b, int rot) {
     int i, j, k;
     /*calcolo la rotazione da effettuare per arrivare a rot*/
@@ -48,10 +43,6 @@ void flip_blocco(struct Blocco *b, int rot) {
     b->rotazione=(b->rotazione+rot)%4;
 }
 
-/**
- * inizializza il piano di gioco, quindi la matrice che lo compone
- * @param m piano di gioco da inizializzare
- */
 void inizializza_matrice(struct Piano_Gioco *m){
     int i, j;
     for(i=0;i<N_RIGHE; i++){
@@ -67,17 +58,6 @@ void inizializza_matrice(struct Piano_Gioco *m){
     m->score=0;
 }
 
-/**
- * inizializza il vettore di tetramini, ciascuno sarà composto da una matrice dove il tetramino è rappresentato con un numero divero da 0 mentre gli spazi vuoti saranno 0:
- * il primo tetramino è la linea (1)
- * il secondo tetramino è il quadrato (2)
- * il terzo tetramino è L_sinistra (3)
- * il quarto tetramino è L_destra (4)
- * il quinto tetramino è S_sinistra (5)
- * il sesto tetramino è S_destra (6)
- * il settimo tetramino è la T (7)
- * @param blocchi vettore da inizializzare
- */
 void inizializza_blocchi(struct Blocco *blocchi){
     int num_blocchi=20;
     struct Blocco linea={
