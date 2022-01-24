@@ -12,4 +12,4 @@ void cleaner();
 void centeredPrintf(char *s);
 int menu();
 
-#endif //TETRISUNIVE_TETRIS_PRINT_H
+#endif

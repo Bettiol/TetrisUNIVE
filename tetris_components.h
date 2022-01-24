@@ -20,4 +20,4 @@ void inizializza_blocchi(struct Blocco *blocchi);
 void flip_blocco(struct Blocco *b, int rot);
 void inizializza_matrice(struct Piano_Gioco *m);
 
-#endif //TETRISUNIVE_TETRIS_COMPONENTS_H
+#endif

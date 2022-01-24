@@ -1,7 +1,3 @@
-//
-// Created by enrico on 04/12/2021.
-//
-
 #ifndef TETRISUNIVE_TETRIS_OPERATIONS_H
 #define TETRISUNIVE_TETRIS_OPERATIONS_H
 
@@ -17,4 +13,4 @@ int fine_blocchi(struct Blocco *v);
 int inserisci_bloccco_posizione(struct Piano_Gioco *m, struct Blocco b, int piano);
 int inserisci_blocco_score(struct Piano_Gioco *m, struct Blocco b);
 
-#endif //TETRISUNIVE_TETRIS_OPERATIONS_H
+#endif
