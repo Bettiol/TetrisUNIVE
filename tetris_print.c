@@ -179,8 +179,7 @@ int menu() {
     char titolo[] = "TermTris";
     char modalita1[] = "1) Single Player";
     char modalita2[] = "2) Multiplayer Player";
-    char modalita3[] = "3) CPU";
-    char help[] = "9) Help";
+    char modalita3[] = "3) Player vs CPU";
     int scelta;
 
 
@@ -194,49 +193,13 @@ int menu() {
     centeredPrintf(modalita2);
     centeredPrintf(modalita3);
     printf("\n");
-    centeredPrintf(help);
 
     do {
 
         printf("Inserire il numero corrispondente all'opzione desisderata --> ");
         scanf("%d", &scelta);
 
-    } while (scelta != 1 && scelta != 2 && scelta != 3 && scelta != 9);
-
-    return scelta;
-
-}
-
-int help() {
-
-    char titolo[] = "TermTris - Help";
-    char help1[] = "1) Modalità";
-    char help2[] = "2) Pezzi";
-    char help3[] = "3) Help";
-    char help4[] = "4) Punteggi";
-    char help5[] = "5) Regole";
-
-    int scelta;
-
-
-    centeredPrintf(titolo);
-
-    printf("\n");
-    printf("\n");
-    printf("\n");
-
-    centeredPrintf(help1);
-    centeredPrintf(help2);
-    centeredPrintf(help3);
-    centeredPrintf(help4);
-    centeredPrintf(help5);
-
-    do {
-
-        printf("Inserire il numero corrispondente all'opzione desiderata --> ");
-        scanf("%d", &scelta);
-
-    } while (scelta != 1 && scelta != 2 && scelta != 3 && scelta != 4 && scelta != 5);
+    } while (scelta != 1 && scelta != 2 && scelta != 3);
 
     return scelta;
 
