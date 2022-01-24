@@ -94,7 +94,7 @@ int score_play(struct Blocco *v, struct Piano_Gioco p, int depth, int pos, int r
                     v[nbloc].pos_x=errore;
 
                     score = inserisci_blocco_score(&p,v[nbloc]);
-                    //stampa_matrice(p);
+                    /*stampa_matrice(p);*/
                     return score + score_play(v, copy, depth, pos+1, rot, nbloc) + score_play(v, p, depth-1, 0, 0, 0);
 
                 }
