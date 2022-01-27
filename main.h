@@ -1,4 +1,10 @@
-#ifndef TETRISUNIVE_MAIN_H
+/**
+ * @file main.h
+ * @author Antonio
+ * @brief Test
+ * @date 07/12/2020
+ */
+ #ifndef TETRISUNIVE_MAIN_H
 #define TETRISUNIVE_MAIN_H
 
 #include <stdio.h>

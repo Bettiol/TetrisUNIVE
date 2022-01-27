@@ -1,3 +1,9 @@
+/**
+ * @file input_control.h
+ * @author Antonio
+ * @brief Test
+ * @date 07/12/2020
+ */
 #ifndef TETRISUNIVE_INPUT_CONTROL_H
 #define TETRISUNIVE_INPUT_CONTROL_H
 
