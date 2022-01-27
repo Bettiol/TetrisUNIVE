@@ -3,7 +3,8 @@
  * @authors Bettiol Luca, Brognera Enrico
  * @date 27/01/2022
  */
- #ifndef TETRISUNIVE_MAIN_H
+
+#ifndef TETRISUNIVE_MAIN_H
 #define TETRISUNIVE_MAIN_H
 
 #include <stdio.h>
