@@ -56,11 +56,7 @@ int control_nbloc(struct Blocco *v, int nbloc){
 
 int control_rot(int rot, int n_block){
     /*-1 valore non valido*/
-    if((n_block==0 || n_block==4 || n_block==5) && rot <=1)
-        return rot;
-    else if(n_block==1 && rot ==0 )
-        return rot;
-    if((n_block==2 || n_block==3 || n_block==6) && rot <=3)
+    if(((n_block==0 || n_block==4 || n_block==5) && rot <=1) || (n_block==1 && rot ==0) || ((n_block==2 || n_block==3 || n_block==6) && rot <=3))
         return rot;
     else
         return NNVALIDO;
@@ -127,7 +123,7 @@ int top_play(int score, struct Blocco *v){
 
 int choose_block(int *n_block, int *rot, struct Blocco *v, struct Piano_Gioco p){
     int c_block, c_rot, c_pos, pos;
-    int score=0, score_max=-1, top=0;
+    int score, score_max=-1, top=0;
     *n_block=0;
     *rot=0;
     pos=0;

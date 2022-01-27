@@ -1,7 +1,6 @@
 /**
  * @file tetris_print.h
- * @author Antonio
- * @brief Test
+ * @author Brognera Bettiol
  * @date 07/12/2020
  */
 #ifndef TETRISUNIVE_TETRIS_PRINT_H

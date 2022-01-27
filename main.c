@@ -52,6 +52,10 @@ int main() {
             case 9:
 
                 return 0;
+
+            default:
+
+                break;
         }
 
         cleaner();
