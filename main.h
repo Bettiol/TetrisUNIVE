@@ -1,7 +1,6 @@
 /**
  * @file main.h
- * @author Antonio
- * @brief Test
+ * @author Brognera Bettiol
  * @date 07/12/2020
  */
  #ifndef TETRISUNIVE_MAIN_H

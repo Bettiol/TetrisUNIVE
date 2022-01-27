@@ -1,7 +1,6 @@
 /**
  * @file NPC_tetris.h
- * @author Antonio
- * @brief Test
+ * @author Brognera Bettiol
  * @date 07/12/2020
  */
 #ifndef TETRISUNIVE_NPC_TETRIS_H

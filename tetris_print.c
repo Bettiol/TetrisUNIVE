@@ -159,7 +159,7 @@ void stampa_perso(int perso, int p1, int p2){
 void centeredPrintf(char *s) {
 
     int larghezza = GetColumnWidth();
-    int lungString = strlen(s);
+    int lungString = (int)strlen(s);
     int larghezzaCent = (larghezza - lungString) / 2 + lungString;
 
     printf("%*s\n", larghezzaCent, s);
@@ -216,7 +216,7 @@ int finePartita() {
 
 void cleaner() {
 
-    int i = 0;
+    int i;
 
     for (i = 0; i < 1000; ++i) {
 
