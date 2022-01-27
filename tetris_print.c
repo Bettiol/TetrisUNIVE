@@ -2,25 +2,6 @@
 #include "tetris_components.h"
 #include <string.h>
 
-#ifdef _WIN32
-#include <windows.h>
-int GetColumnWidth() {
-
-    CONSOLE_SCREEN_BUFFER_INFO info;
-    HANDLE out;
-
-    if (!(out = GetStdHandle(STD_OUTPUT_HANDLE)) ||
-        !GetConsoleScreenBufferInfo(out, &info))
-        return 80;
-    return info.dwSize.X;
-
-}
-#else
-int GetColumnWidth() {
-    return 200;
-}
-#endif
-
 /*1*/
 #define RED "\033[0;31m"
 /*2*/
@@ -48,6 +29,7 @@ int GetColumnWidth() {
 #define BLOCCO6 "BLOCCO 6\t\tRIMANENTI:%d\nROT: 0 \t\tROT: 90 \tROT: 180 \tROT:270\n"WHT" #\t\t#\t\t###\t\t #\n###\t\t##\t\t #\t\t##\n\t\t#\t\t\t\t #\n\n"WHT
 
 void stampa_colore(int colore){
+
     if(colore==1)
         printf(RED"#"WHT);
     else if(colore==2)
@@ -155,10 +137,10 @@ void stampa_perso(int perso, int p1, int p2){
         printf("\n\nPlayer 2 sei uscito dal campo di gioco. Complimenti Player 1, hai VINTO!\n\n");
     }
 }
-/*--------------------------------------------------------------------------------------------------------------------*/
+
 void centeredPrintf(char *s) {
 
-    int larghezza = GetColumnWidth();
+    int larghezza = 240;
     int lungString = (int)strlen(s);
     int larghezzaCent = (larghezza - lungString) / 2 + lungString;
 
