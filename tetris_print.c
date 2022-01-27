@@ -68,16 +68,6 @@ void stampa_colore(int colore){
         printf(" ");
 }
 
-void stampa_blocco(struct Blocco b){
-    int i, j;
-    for(i=0;i<4;i++){
-        for (j = 0;  j<4 ; j++) {
-            stampa_colore(b.forma[i][j]);
-        }
-        printf("\n");
-    }
-}
-
 void stampa_blocchi(struct  Blocco *b){
 
     if(b[0].num_blocchi>0)
@@ -95,11 +85,6 @@ void stampa_blocchi(struct  Blocco *b){
     if(b[6].num_blocchi>0)
         printf(BLOCCO6, b[6].num_blocchi);
 
-    /*int i;
-      for(i=0;i<N_BLOCCHI;i++){
-        stampa_blocco(b[i]);
-        printf("numero blocchi RIMANENTI -> %d\n",b[i].num_blocchi);
-    }*/
 }
 
 void stampa_matrice(struct Piano_Gioco m){
@@ -220,7 +205,7 @@ int finePartita() {
 
     do {
 
-        printf("\n\nPer tornare al menù premere 0, per uscire premerre 9 --> ");
+        printf("\n\nPer tornare al menù premere 0, per uscire premere 9 --> ");
         scanf("%d", &scelta);
 
     } while (scelta != 0 && scelta != 9);
