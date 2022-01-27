@@ -140,19 +140,19 @@ void stampa_matrici(struct Piano_Gioco m1, struct Piano_Gioco m2){
 void stampa_score(int p1, int p2){
     printf("Score Player 1 -> %d\t\t\t Score Player 2 -> %d\n", p1, p2);
     if(p1>p2)
-        printf("\n\nComplimenti Player 1, hai VINTO\n\n");
+        printf("\n\nComplimenti Player 1, hai VINTO!\n\n");
     else if(p2>p1)
-        printf("\n\nComplimenti Player 2, hai VINTO\n\n");
+        printf("\n\nComplimenti Player 2, hai VINTO!\n\n");
     else
-        printf("\n\nPlayer 1 e Player 2, avete PAREGGIATO\n\n");
+        printf("\n\nPlayer 1 e Player 2, avete PAREGGIATO!\n\n");
 }
 
 void stampa_perso(int perso, int p1, int p2){
     if(perso==1 && p1==1){
-        printf("\n\nPlayer 1 sei uscito dal campo di gioco. Complimenti Player 2, hai VINTO\n\n");
+        printf("\n\nPlayer 1 sei uscito dal campo di gioco. Complimenti Player 2, hai VINTO!\n\n");
     }
     if(perso==1 && p2==1){
-        printf("\n\nPlayer 2 sei uscito dal campo di gioco. Complimenti Player 1, hai VINTO\n\n");
+        printf("\n\nPlayer 2 sei uscito dal campo di gioco. Complimenti Player 1, hai VINTO!\n\n");
     }
 }
 /*--------------------------------------------------------------------------------------------------------------------*/

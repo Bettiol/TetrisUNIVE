@@ -6,7 +6,7 @@
 #define N_COLONNE  10
 
 /**
- * rappresenta le caratteristiche di un tetramino
+ * Rappresenta le caratteristiche di un tetramino
  */
 struct Blocco{
     int forma[4][4];
@@ -16,7 +16,7 @@ struct Blocco{
 };
 
 /**
- * rappresenta le caratteristiche di un piano di gioco
+ * Rappresenta le caratteristiche di un piano di gioco
  */
 struct Piano_Gioco{
     int matrice[N_RIGHE+3][N_COLONNE];

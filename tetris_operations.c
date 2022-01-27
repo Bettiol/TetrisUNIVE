@@ -29,7 +29,7 @@ int inserisci_blocco(struct Piano_Gioco *m, struct Blocco b){
     int perso;
     perso=caduta_blocco(m,b,0);
     if(perso==1){
-        printf("HAI PERSO!\n\n");
+        printf("Sei uscito dal campo di gioco, hai PERSO!\n\n");
     }
     score_control(m);
     return perso;
@@ -89,18 +89,6 @@ int score_control(struct Piano_Gioco *m){
     return score;
 }
 
-/*void penalita(struct Piano_Gioco *m, int score){
-    int i;
-    int app;
-    if(score>=6){
-        for(i=0;i<N_COLONNE;i++){
-            app=m->matrice[N_RIGHE-1][i];
-            m->matrice[N_RIGHE-1][i]=m->matrice[N_RIGHE-2][i];
-            m->matrice[N_RIGHE-2][i]=app;
-        }
-    }
-}*/
-
 void penalita(struct Piano_Gioco *m, int score){
     int i, j;
     if(score==6){
@@ -132,7 +120,7 @@ int fine_blocchi(struct Blocco *v){
             fine=0;
     }
     if(fine==1){
-        printf("HAI FINITO I BLOCCHI\n\n");
+        printf("Hai finito i Blocchi!\n\n");
     }
     return fine;
 }
