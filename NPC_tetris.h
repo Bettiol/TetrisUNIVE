@@ -8,6 +8,11 @@
 
 #include <stdio.h>
 
+#define NNVALIDO -1
+#define BLOCCHIFINITI -2
+#define SPORGEDX -5
+#define SPORGESX -6
+
 /**
  * Verifica quale tetramino, in quele rotazione e in quale posizione effettua un punteggio maggiore
  * @param n_block numero del blocco

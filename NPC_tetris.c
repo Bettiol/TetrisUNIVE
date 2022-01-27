@@ -1,10 +1,6 @@
 #include "tetris_components.h"
 #include "tetris_operations.h"
-
-#define NNVALIDO -1
-#define BLOCCHIFINITI -2
-#define SPORGEDX -5
-#define SPORGESX -6
+#include "NPC_tetris.h"
 
 struct Piano_Gioco p_copia(struct  Piano_Gioco p){
     struct Piano_Gioco p_copia;

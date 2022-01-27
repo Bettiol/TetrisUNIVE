@@ -1,32 +1,7 @@
 #include <stdio.h>
 #include "tetris_components.h"
 #include <string.h>
-
-/*1*/
-#define RED "\033[0;31m"
-/*2*/
-#define GRN "\033[0;32m"
-/*3*/
-#define YEL "\033[0;33m"
-/*4*/
-#define BLU "\033[0;34m"
-/*5*/
-#define MAG "\033[0;35m"
-/*6*/
-#define CYN "\033[0;36m"
-/*7*/
-#define WHT "\033[0;37m"
-/*8*/
-#define GRY "\033[0;90m"
-
-
-#define BLOCCO0 "BLOCCO 0\t\tRIMANENTI:%d\nROT: 0/180 \t\tROT: 90/270 \n"RED"####\t\t\t#\n\t\t\t#\n\t\t\t#\n\t\t\t#\n\n"WHT
-#define BLOCCO1 "BLOCCO 1\t\tRIMANENTI:%d\nROT: 0/90/180/270\n"GRN"##\n##\n\n"WHT
-#define BLOCCO2 "BLOCCO 2\t\tRIMANENTI:%d\nROT: 0 \t\tROT: 90 \tROT: 180 \tROT:270\n"YEL"#\t\t##\t\t###\t\t #\n###\t\t#\t\t  #\t\t #\n\t\t#\t\t\t\t##\n\n"WHT
-#define BLOCCO3 "BLOCCO 3\t\tRIMANENTI:%d\nROT: 0 \t\tROT: 90 \tROT: 180 \tROT:270\n"BLU"  #\t\t#\t\t###\t\t##\n###\t\t#\t\t#\t\t #\n\t\t##\t\t\t\t #\n\n"WHT
-#define BLOCCO4 "BLOCCO 4\t\tRIMANENTI:%d\nROT: 0/180 \t\tROT: 90/270\n"MAG" ##\t\t\t#\n##\t\t\t##\n\t\t\t #\n\n"WHT
-#define BLOCCO5 "BLOCCO 5\t\tRIMANENTI:%d\nROT: 0/180 \t\tROT: 90/270\n"CYN"##\t\t\t #\n ##\t\t\t##\n\t\t\t#\n\n"WHT
-#define BLOCCO6 "BLOCCO 6\t\tRIMANENTI:%d\nROT: 0 \t\tROT: 90 \tROT: 180 \tROT:270\n"WHT" #\t\t#\t\t###\t\t #\n###\t\t##\t\t #\t\t##\n\t\t#\t\t\t\t #\n\n"WHT
+#include "tetris_print.h"
 
 void stampa_colore(int colore){
 
