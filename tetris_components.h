@@ -5,6 +5,9 @@
 #define N_RIGHE  15
 #define N_COLONNE  10
 
+/**
+ * rappresenta le caratteristiche di un tetramino
+ */
 struct Blocco{
     int forma[4][4];
     int rotazione;
@@ -12,6 +15,9 @@ struct Blocco{
     int num_blocchi;
 };
 
+/**
+ * rappresenta le caratteristiche di un piano di gioco
+ */
 struct Piano_Gioco{
     int matrice[N_RIGHE+3][N_COLONNE];
     int score;
@@ -28,7 +34,7 @@ struct Piano_Gioco{
  * il settimo tetramino è la T (7)
  * @param blocchi vettore da inizializzare
  */
-void inizializza_blocchi(struct Blocco *blocchi);
+void inizializza_blocchi(struct Blocco *blocchi, int num_blocchi);
 
 /**
  * Routa un tetramino
@@ -40,6 +46,7 @@ void flip_blocco(struct Blocco *b, int rot);
 /**
  * Inizializza il piano di gioco, quindi la matrice che lo compone
  * @param m piano di gioco da inizializzare
+ * @param num_blocchi numero di tetramini disponibili
  */
 void inizializza_matrice(struct Piano_Gioco *m);
 

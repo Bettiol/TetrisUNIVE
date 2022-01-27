@@ -23,21 +23,21 @@ int GetColumnWidth() {
 #endif
 
 /*1*/
-#define RED "\e[0;31m"
+#define RED "\033[0;31m"
 /*2*/
-#define GRN "\e[0;32m"
+#define GRN "\033[0;32m"
 /*3*/
-#define YEL "\e[0;33m"
+#define YEL "\033[0;33m"
 /*4*/
-#define BLU "\e[0;34m"
+#define BLU "\033[0;34m"
 /*5*/
-#define MAG "\e[0;35m"
+#define MAG "\033[0;35m"
 /*6*/
-#define CYN "\e[0;36m"
+#define CYN "\033[0;36m"
 /*7*/
-#define WHT "\e[0;37m"
+#define WHT "\033[0;37m"
 /*8*/
-#define GRY "\e[0;90m"
+#define GRY "\033[0;90m"
 
 
 #define BLOCCO0 "BLOCCO 0\t\tRIMANENTI:%d\nROT: 0/180 \t\tROT: 90/270 \n"RED"####\t\t\t#\n\t\t\t#\n\t\t\t#\n\t\t\t#\n\n"WHT
@@ -163,6 +163,14 @@ void stampa_score(int p1, int p2){
         printf("PAREGGIO\n");
 }
 
+void stampa_perso(int perso, int p1, int p2){
+    if(perso==1 && p1==1){
+        printf("HA PERSO P1 \t VINCITORE P2\n\n");
+    }
+    if(perso==1 && p2==1){
+        printf("HA PERSO P2 \t VINCITORE P1\n\n");
+    }
+}
 /*--------------------------------------------------------------------------------------------------------------------*/
 void centeredPrintf(char *s) {
 

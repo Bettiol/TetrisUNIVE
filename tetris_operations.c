@@ -39,9 +39,6 @@ int inserisci_blocco_multi(struct Piano_Gioco *m1, struct Piano_Gioco *m2, struc
     int perso;
     int score;
     perso=caduta_blocco(m1,b,0);
-    if(perso==1){
-        printf("HAI PERSO! \n\n");
-    }
     score= score_control(m1);
     penalita(m2, score);
     return perso;

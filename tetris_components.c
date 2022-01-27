@@ -1,24 +1,5 @@
-#include <stdio.h>
-#define N_RIGHE  15
-#define N_COLONNE  10
+#include "tetris_components.h"
 
-/**
- * rappresenta le caratteristiche di un tetramino
- */
-struct Blocco{
-    int forma[4][4];
-    int rotazione;
-    int pos_x;
-    int num_blocchi;
-};
-
-/**
- * rappresenta le caratteristiche di un piano di gioco
- */
-struct Piano_Gioco{
-    int matrice[N_RIGHE+3][N_COLONNE];
-    int score;
-};
 
 void flip_blocco(struct Blocco *b, int rot) {
     int i, j, k;
@@ -58,49 +39,49 @@ void inizializza_matrice(struct Piano_Gioco *m){
     m->score=0;
 }
 
-void inizializza_blocchi(struct Blocco *blocchi){
-    int num_blocchi=20;
+void inizializza_blocchi(struct Blocco *blocchi, int num_blocchi){
+    int i;
     struct Blocco linea={
             {1,1,1,1,0,0,0,0,0,0,0,0},
             0,
             0,
-            num_blocchi,
+            0,
     };
     struct Blocco quadrato={
             {2,2,0,0,2,2,0,0,0,0,0,0},
             0,
             0,
-            num_blocchi,
+            0,
     };
     struct Blocco l_sinistra={
             {3,0,0,0,3,3,3,0,0,0,0,0},
             0,
             0,
-            num_blocchi,
+            0,
     };
     struct Blocco l_destra={
             {0,0,4,0,4,4,4,0,0,0,0,0},
             0,
             0,
-            num_blocchi,
+            0,
     };
     struct Blocco s_sinistra={
             {0,5,5,0,5,5,0,0,0,0,0,0},
             0,
             0,
-            num_blocchi,
+            0,
     };
     struct Blocco s_destra={
             {6,6,0,0,0,6,6,0,0,0,0,0},
             0,
             0,
-            num_blocchi,
+            0,
     };
     struct Blocco t_rov={
             {0,7,0,0,7,7,7,0,0,0,0,0},
             0,
             0,
-            num_blocchi,
+            0,
     };
 
     blocchi[0]=linea;
@@ -110,5 +91,9 @@ void inizializza_blocchi(struct Blocco *blocchi){
     blocchi[4]=s_sinistra;
     blocchi[5]=s_destra;
     blocchi[6]=t_rov;
+
+    for(i=0;i<N_BLOCCHI;i++){
+        blocchi[i].num_blocchi=num_blocchi;
+    }
 }
 
