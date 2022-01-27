@@ -68,20 +68,20 @@ int score_play(struct Blocco *v, struct Piano_Gioco p, int depth, int pos, int r
         return 0;
     }else{
         errore= control_nbloc(v, nbloc);
-        if(errore==-2){
+        if(errore==BLOCCHIFINITI){
             return score_play(v, p, depth, pos, rot, nbloc+1);
-        }else if(errore==-1){
+        }else if(errore==NNVALIDO){
             return score_play(v, p, depth-1, 0, 0, 0);
         }else{
             errore= control_rot(rot, nbloc);
-            if(errore==-1) {
+            if(errore==NNVALIDO) {
                 return score_play(v, p, depth, 0, 0, nbloc+1);
             }else{
                 flip_blocco(&v[nbloc], rot);
                 errore= control_pos(v[nbloc], pos);
-                if(errore==-5)
+                if(errore==SPORGEDX)
                     return score_play(v, p, depth, 0, rot+1, nbloc);
-                else if(errore==-6){
+                else if(errore==SPORGESX){
                     return score_play(v, p, depth, pos+1, rot, nbloc);
                 }else{
                     int score;
