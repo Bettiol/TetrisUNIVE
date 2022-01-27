@@ -1,6 +1,6 @@
 /**
  * @file main.h
- * @author Brognera Bettiol
+ * @authors Bettiol Luca, Brognera Enrico
  * @date 07/12/2020
  */
  #ifndef TETRISUNIVE_MAIN_H

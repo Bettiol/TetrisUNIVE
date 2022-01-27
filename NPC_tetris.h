@@ -1,6 +1,6 @@
 /**
  * @file NPC_tetris.h
- * @author Brognera Bettiol
+ * @authors Bettiol Luca, Brognera Enrico
  * @date 07/12/2020
  */
 #ifndef TETRISUNIVE_NPC_TETRIS_H

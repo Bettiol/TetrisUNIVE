@@ -1,6 +1,6 @@
 /**
  * @file input_control.h
- * @author Brognera Bettiol
+ * @authors Bettiol Luca, Brognera Enrico
  * @date 07/12/2020
  */
 #ifndef TETRISUNIVE_INPUT_CONTROL_H

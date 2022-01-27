@@ -7,16 +7,17 @@
 
 /**
  * @file main.c
- * @mainpage main PI program
+ * @authors Bettiol Luca, Brognera Enrico
+ * @mainpage main X-TETRIS
  * @section intro_sec Introduzione
  *
- * Questa è una piccola introduzione, tipo la consegna e le specifiche del
- * programma.
+ * Progetto universitario di Introduzione alla Programmazione, che consiste nella rielaborazione in ANSI-C del famoso gioco arcade Tetris
  *
- * @section install_sec Installazione
- * Qui abbiamo creato una nuova sezione dove possiamo scrivere
- * le istruzioni per installare il programma
- * @subsection step1 Step 1: Installa gcc
+ * Il gioco prevede tre diverse modalità:
+ *      - Single Player
+ *      - Multi Player
+ *      - Player vs CPU
+ *
  */
 int main() {
 

@@ -1,6 +1,6 @@
 /**
  * @file tetris_components.h
- * @author Brognera Bettiol
+ * @authors Bettiol Luca, Brognera Enrico
  * @date 07/12/2020
  */
 #ifndef TETRISUNIVE_TETRIS_COMPONENTS_H
