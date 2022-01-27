@@ -20,31 +20,46 @@
  */
 int main() {
 
-    int scelta = menu();
+    int scelta;
 
-    switch (scelta) {
+    do {
 
-        case 1:
+        scelta = menu();
 
-            single_player();
+        switch (scelta) {
 
-            break;
+            case 1:
 
-        case 2:
+                single_player();
+                scelta = finePartita();
 
-            multi_player();
+                break;
 
-            break;
+            case 2:
 
-        case 3:
+                multi_player();
+                scelta = finePartita();
 
-            player_cpu();
+                break;
 
-            break;
+            case 3:
 
-    }
+                player_cpu();
+                scelta = finePartita();
+
+                break;
+
+            case 9:
+
+                return 0;
+        }
+
+        cleaner();
+
+    } while (scelta == 0);
 
     return 0;
+
 }
 
 void single_player(){
@@ -150,4 +165,3 @@ void player_cpu(){
     if(fine!=0)
         stampa_score(player1.score, player2.score);
 }
-

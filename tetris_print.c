@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include "tetris_components.h"
-#include <stdlib.h>
 #include <string.h>
 
 #ifdef _WIN32
@@ -105,7 +104,7 @@ void stampa_blocchi(struct  Blocco *b){
 
 void stampa_matrice(struct Piano_Gioco m){
     int i, j;
-    printf("score : %d\n",m.score);
+    printf("Score : %d\n",m.score);
     for (j = 0;  j<N_COLONNE ; j++) {
         printf("|%d",j);
     }
@@ -154,40 +153,41 @@ void stampa_matrici(struct Piano_Gioco m1, struct Piano_Gioco m2){
 }
 
 void stampa_score(int p1, int p2){
-    printf("score P1 -> %d\t\t\t score P2 -> %d\n", p1, p2);
+    printf("Score Player 1 -> %d\t\t\t Score Player 2 -> %d\n", p1, p2);
     if(p1>p2)
-        printf("HA VINTO P1\n");
+        printf("\n\nComplimenti Player 1, hai VINTO\n\n");
     else if(p2>p1)
-        printf("HA VINTO P2\n");
+        printf("\n\nComplimenti Player 2, hai VINTO\n\n");
     else
-        printf("PAREGGIO\n");
+        printf("\n\nPlayer 1 e Player 2, avete PAREGGIATO\n\n");
 }
 
 void stampa_perso(int perso, int p1, int p2){
     if(perso==1 && p1==1){
-        printf("HA PERSO P1 \t VINCITORE P2\n\n");
+        printf("\n\nPlayer 1 sei uscito dal campo di gioco. Complimenti Player 2, hai VINTO\n\n");
     }
     if(perso==1 && p2==1){
-        printf("HA PERSO P2 \t VINCITORE P1\n\n");
+        printf("\n\nPlayer 2 sei uscito dal campo di gioco. Complimenti Player 1, hai VINTO\n\n");
     }
 }
 /*--------------------------------------------------------------------------------------------------------------------*/
 void centeredPrintf(char *s) {
 
-    int total_width = GetColumnWidth();
-    int s_width = strlen(s);
-    int field_width = (total_width - s_width) / 2 + s_width;
+    int larghezza = GetColumnWidth();
+    int lungString = strlen(s);
+    int larghezzaCent = (larghezza - lungString) / 2 + lungString;
 
-    printf("%*s\n", field_width, s);
+    printf("%*s\n", larghezzaCent, s);
 
 }
 
 int menu() {
 
-    char titolo[] = "TermTris";
+    char titolo[] = "X-TETRIS";
     char modalita1[] = "1) Single Player";
     char modalita2[] = "2) Multiplayer Player";
     char modalita3[] = "3) Player vs CPU";
+    char exit[] = "9) Esci";
     int scelta;
 
 
@@ -201,18 +201,42 @@ int menu() {
     centeredPrintf(modalita2);
     centeredPrintf(modalita3);
     printf("\n");
+    centeredPrintf(exit);
 
     do {
 
         printf("Inserire il numero corrispondente all'opzione desisderata --> ");
         scanf("%d", &scelta);
 
-    } while (scelta != 1 && scelta != 2 && scelta != 3);
+    } while (scelta != 1 && scelta != 2 && scelta != 3 && scelta != 9);
+
+    return scelta;
+
+}
+
+int finePartita() {
+
+    int scelta;
+
+    do {
+
+        printf("\n\nPer tornare al menù premere 0, per uscire premerre 9 --> ");
+        scanf("%d", &scelta);
+
+    } while (scelta != 0 && scelta != 9);
 
     return scelta;
 
 }
 
 void cleaner() {
-    system("CLEAR");
+
+    int i = 0;
+
+    for (i = 0; i < 1000; ++i) {
+
+        printf("\n");
+
+    }
 }
+
