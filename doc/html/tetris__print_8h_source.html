@@ -1,0 +1,112 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.3"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>X-TETRIS:  File sorgente tetris_print.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">X-TETRIS<span id="projectnumber">&#160;1.00</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generato da Doxygen 1.9.3 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'Cerca','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Cerca');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">tetris_print.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="tetris__print_8h.html">Vai alla documentazione di questo file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#ifndef TETRISUNIVE_TETRIS_PRINT_H</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#define TETRISUNIVE_TETRIS_PRINT_H</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="keywordtype">void</span> <a class="code hl_function" href="tetris__print_8h.html#a65f4c4a06c93bef885bdad1808a2c389">stampa_blocchi</a>(<span class="keyword">struct</span>  <a class="code hl_struct" href="struct_blocco.html">Blocco</a> *b);</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="keywordtype">void</span> <a class="code hl_function" href="tetris__print_8h.html#aa7778d1f08f44dece5582517211cff68">stampa_matrice</a>(<span class="keyword">struct</span> <a class="code hl_struct" href="struct_piano___gioco.html">Piano_Gioco</a> m);</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="keywordtype">void</span> <a class="code hl_function" href="tetris__print_8h.html#a51e32ab6bdda53dcbcb9ccc5b3c68880">stampa_colore</a>(<span class="keywordtype">int</span> colore);</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="keywordtype">void</span> <a class="code hl_function" href="tetris__print_8h.html#a3567150e6bc6f9cdc0c2aae033444771">stampa_matrici</a>(<span class="keyword">struct</span> <a class="code hl_struct" href="struct_piano___gioco.html">Piano_Gioco</a> m1, <span class="keyword">struct</span> <a class="code hl_struct" href="struct_piano___gioco.html">Piano_Gioco</a> m2);</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="keywordtype">void</span> <a class="code hl_function" href="tetris__print_8h.html#a44704b86c739edac8707a1ea54963989">stampa_score</a>(<span class="keywordtype">int</span> p1, <span class="keywordtype">int</span> p2);</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span><span class="keywordtype">void</span> <a class="code hl_function" href="tetris__print_8h.html#aa29c57c3c03c367adf894b82432368cd">stampa_perso</a>(<span class="keywordtype">int</span> perso, <span class="keywordtype">int</span> p1, <span class="keywordtype">int</span> p2);</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span><span class="keywordtype">int</span> <a class="code hl_function" href="tetris__print_8h.html#a3dd967b04b854d1e54cf4259e36b5e32">finePartita</a>();</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span><span class="keywordtype">void</span> <a class="code hl_function" href="tetris__print_8h.html#ac51d0f0d2f3775959b88d640d9d72f5b">centeredPrintf</a>(<span class="keywordtype">char</span> *s);</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span><span class="keywordtype">int</span> <a class="code hl_function" href="tetris__print_8h.html#ae83fcdbeb2b6757fc741ae953b633ee1">menu</a>();</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span> </div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span><span class="keywordtype">void</span> <a class="code hl_function" href="tetris__print_8h.html#a0a003a1ea8ce7b8f5c058d66ed95c637">cleaner</a>();</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span> </div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="astruct_blocco_html"><div class="ttname"><a href="struct_blocco.html">Blocco</a></div><div class="ttdef"><b>Definition:</b> tetris_components.h:16</div></div>
+<div class="ttc" id="astruct_piano___gioco_html"><div class="ttname"><a href="struct_piano___gioco.html">Piano_Gioco</a></div><div class="ttdef"><b>Definition:</b> tetris_components.h:26</div></div>
+<div class="ttc" id="atetris__print_8h_html_a0a003a1ea8ce7b8f5c058d66ed95c637"><div class="ttname"><a href="tetris__print_8h.html#a0a003a1ea8ce7b8f5c058d66ed95c637">cleaner</a></div><div class="ttdeci">void cleaner()</div><div class="ttdef"><b>Definition:</b> tetris_print.c:199</div></div>
+<div class="ttc" id="atetris__print_8h_html_a3567150e6bc6f9cdc0c2aae033444771"><div class="ttname"><a href="tetris__print_8h.html#a3567150e6bc6f9cdc0c2aae033444771">stampa_matrici</a></div><div class="ttdeci">void stampa_matrici(struct Piano_Gioco m1, struct Piano_Gioco m2)</div><div class="ttdef"><b>Definition:</b> tetris_print.c:88</div></div>
+<div class="ttc" id="atetris__print_8h_html_a3dd967b04b854d1e54cf4259e36b5e32"><div class="ttname"><a href="tetris__print_8h.html#a3dd967b04b854d1e54cf4259e36b5e32">finePartita</a></div><div class="ttdeci">int finePartita()</div><div class="ttdef"><b>Definition:</b> tetris_print.c:184</div></div>
+<div class="ttc" id="atetris__print_8h_html_a44704b86c739edac8707a1ea54963989"><div class="ttname"><a href="tetris__print_8h.html#a44704b86c739edac8707a1ea54963989">stampa_score</a></div><div class="ttdeci">void stampa_score(int p1, int p2)</div><div class="ttdef"><b>Definition:</b> tetris_print.c:122</div></div>
+<div class="ttc" id="atetris__print_8h_html_a51e32ab6bdda53dcbcb9ccc5b3c68880"><div class="ttname"><a href="tetris__print_8h.html#a51e32ab6bdda53dcbcb9ccc5b3c68880">stampa_colore</a></div><div class="ttdeci">void stampa_colore(int colore)</div><div class="ttdef"><b>Definition:</b> tetris_print.c:31</div></div>
+<div class="ttc" id="atetris__print_8h_html_a65f4c4a06c93bef885bdad1808a2c389"><div class="ttname"><a href="tetris__print_8h.html#a65f4c4a06c93bef885bdad1808a2c389">stampa_blocchi</a></div><div class="ttdeci">void stampa_blocchi(struct Blocco *b)</div><div class="ttdef"><b>Definition:</b> tetris_print.c:53</div></div>
+<div class="ttc" id="atetris__print_8h_html_aa29c57c3c03c367adf894b82432368cd"><div class="ttname"><a href="tetris__print_8h.html#aa29c57c3c03c367adf894b82432368cd">stampa_perso</a></div><div class="ttdeci">void stampa_perso(int perso, int p1, int p2)</div><div class="ttdef"><b>Definition:</b> tetris_print.c:132</div></div>
+<div class="ttc" id="atetris__print_8h_html_aa7778d1f08f44dece5582517211cff68"><div class="ttname"><a href="tetris__print_8h.html#aa7778d1f08f44dece5582517211cff68">stampa_matrice</a></div><div class="ttdeci">void stampa_matrice(struct Piano_Gioco m)</div><div class="ttdef"><b>Definition:</b> tetris_print.c:72</div></div>
+<div class="ttc" id="atetris__print_8h_html_ac51d0f0d2f3775959b88d640d9d72f5b"><div class="ttname"><a href="tetris__print_8h.html#ac51d0f0d2f3775959b88d640d9d72f5b">centeredPrintf</a></div><div class="ttdeci">void centeredPrintf(char *s)</div><div class="ttdef"><b>Definition:</b> tetris_print.c:141</div></div>
+<div class="ttc" id="atetris__print_8h_html_ae83fcdbeb2b6757fc741ae953b633ee1"><div class="ttname"><a href="tetris__print_8h.html#ae83fcdbeb2b6757fc741ae953b633ee1">menu</a></div><div class="ttdeci">int menu()</div><div class="ttdef"><b>Definition:</b> tetris_print.c:151</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generato da&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3
+</small></address>
+</body>
+</html>

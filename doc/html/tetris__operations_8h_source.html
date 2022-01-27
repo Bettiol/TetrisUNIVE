@@ -1,0 +1,112 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.3"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>X-TETRIS:  File sorgente tetris_operations.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">X-TETRIS<span id="projectnumber">&#160;1.00</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generato da Doxygen 1.9.3 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'Cerca','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Cerca');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">tetris_operations.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="tetris__operations_8h.html">Vai alla documentazione di questo file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#ifndef TETRISUNIVE_TETRIS_OPERATIONS_H</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#define TETRISUNIVE_TETRIS_OPERATIONS_H</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="keywordtype">int</span> <a class="code hl_function" href="tetris__operations_8h.html#a8e267d4318eb0dede32e72677f7acd90">verifica_posizione_blocco</a>(<span class="keyword">struct</span> <a class="code hl_struct" href="struct_piano___gioco.html">Piano_Gioco</a> *m, <span class="keyword">struct</span> <a class="code hl_struct" href="struct_blocco.html">Blocco</a> b, <span class="keywordtype">int</span> piano);</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="keywordtype">int</span> <a class="code hl_function" href="tetris__operations_8h.html#aeb0ce53c8ebcd57f7e54aa21005e2126">caduta_blocco</a>(<span class="keyword">struct</span> <a class="code hl_struct" href="struct_piano___gioco.html">Piano_Gioco</a> *m, <span class="keyword">struct</span> <a class="code hl_struct" href="struct_blocco.html">Blocco</a> b, <span class="keywordtype">int</span> piano);</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="keywordtype">int</span> <a class="code hl_function" href="tetris__operations_8h.html#a5e262f2285da6ac45d314bd23313e48a">inserisci_blocco</a>(<span class="keyword">struct</span> <a class="code hl_struct" href="struct_piano___gioco.html">Piano_Gioco</a> *m, <span class="keyword">struct</span> <a class="code hl_struct" href="struct_blocco.html">Blocco</a> b);</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="keywordtype">int</span> <a class="code hl_function" href="tetris__operations_8h.html#af1debee4399a9e7e9867a4d729b89924">inserisci_blocco_multi</a>(<span class="keyword">struct</span> <a class="code hl_struct" href="struct_piano___gioco.html">Piano_Gioco</a> *m1, <span class="keyword">struct</span> <a class="code hl_struct" href="struct_piano___gioco.html">Piano_Gioco</a> *m2, <span class="keyword">struct</span> <a class="code hl_struct" href="struct_blocco.html">Blocco</a> b);</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span><span class="keywordtype">void</span> <a class="code hl_function" href="tetris__operations_8h.html#ad0be42d727c77cf8cfb57060ee0997dc">elimina_riga</a>(<span class="keyword">struct</span> <a class="code hl_struct" href="struct_piano___gioco.html">Piano_Gioco</a> *m, <span class="keywordtype">int</span> riga);</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span><span class="keywordtype">int</span> <a class="code hl_function" href="tetris__operations_8h.html#a8c99cda6f56fdbe1935b63655b2e70f6">score_control</a>(<span class="keyword">struct</span> <a class="code hl_struct" href="struct_piano___gioco.html">Piano_Gioco</a> *m);</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span> </div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span><span class="keywordtype">void</span> <a class="code hl_function" href="tetris__operations_8h.html#aa50919b9d7d5632ccebeeb1b0fc26abd">penalita</a>(<span class="keyword">struct</span> <a class="code hl_struct" href="struct_piano___gioco.html">Piano_Gioco</a> *m, <span class="keywordtype">int</span> score);</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span> </div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span><span class="keywordtype">int</span> <a class="code hl_function" href="tetris__operations_8h.html#a8564f8674ad93399d7bd941751436037">fine_blocchi</a>(<span class="keyword">struct</span> <a class="code hl_struct" href="struct_blocco.html">Blocco</a> *v);</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span> </div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span><span class="keywordtype">int</span> <a class="code hl_function" href="tetris__operations_8h.html#a5abf070b827fbe229a8f4f432868abcc">inserisci_bloccco_posizione</a>(<span class="keyword">struct</span> <a class="code hl_struct" href="struct_piano___gioco.html">Piano_Gioco</a> *m, <span class="keyword">struct</span> <a class="code hl_struct" href="struct_blocco.html">Blocco</a> b, <span class="keywordtype">int</span> piano);</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span> </div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span><span class="keywordtype">int</span> <a class="code hl_function" href="tetris__operations_8h.html#a984024d420f568332f6dd7735016d413">inserisci_blocco_score</a>(<span class="keyword">struct</span> <a class="code hl_struct" href="struct_piano___gioco.html">Piano_Gioco</a> *m, <span class="keyword">struct</span> <a class="code hl_struct" href="struct_blocco.html">Blocco</a> b);</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span> </div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="astruct_blocco_html"><div class="ttname"><a href="struct_blocco.html">Blocco</a></div><div class="ttdef"><b>Definition:</b> tetris_components.h:16</div></div>
+<div class="ttc" id="astruct_piano___gioco_html"><div class="ttname"><a href="struct_piano___gioco.html">Piano_Gioco</a></div><div class="ttdef"><b>Definition:</b> tetris_components.h:26</div></div>
+<div class="ttc" id="atetris__operations_8h_html_a5abf070b827fbe229a8f4f432868abcc"><div class="ttname"><a href="tetris__operations_8h.html#a5abf070b827fbe229a8f4f432868abcc">inserisci_bloccco_posizione</a></div><div class="ttdeci">int inserisci_bloccco_posizione(struct Piano_Gioco *m, struct Blocco b, int piano)</div><div class="ttdef"><b>Definition:</b> tetris_operations.c:128</div></div>
+<div class="ttc" id="atetris__operations_8h_html_a5e262f2285da6ac45d314bd23313e48a"><div class="ttname"><a href="tetris__operations_8h.html#a5e262f2285da6ac45d314bd23313e48a">inserisci_blocco</a></div><div class="ttdeci">int inserisci_blocco(struct Piano_Gioco *m, struct Blocco b)</div><div class="ttdef"><b>Definition:</b> tetris_operations.c:28</div></div>
+<div class="ttc" id="atetris__operations_8h_html_a8564f8674ad93399d7bd941751436037"><div class="ttname"><a href="tetris__operations_8h.html#a8564f8674ad93399d7bd941751436037">fine_blocchi</a></div><div class="ttdeci">int fine_blocchi(struct Blocco *v)</div><div class="ttdef"><b>Definition:</b> tetris_operations.c:115</div></div>
+<div class="ttc" id="atetris__operations_8h_html_a8c99cda6f56fdbe1935b63655b2e70f6"><div class="ttname"><a href="tetris__operations_8h.html#a8c99cda6f56fdbe1935b63655b2e70f6">score_control</a></div><div class="ttdeci">int score_control(struct Piano_Gioco *m)</div><div class="ttdef"><b>Definition:</b> tetris_operations.c:59</div></div>
+<div class="ttc" id="atetris__operations_8h_html_a8e267d4318eb0dede32e72677f7acd90"><div class="ttname"><a href="tetris__operations_8h.html#a8e267d4318eb0dede32e72677f7acd90">verifica_posizione_blocco</a></div><div class="ttdeci">int verifica_posizione_blocco(struct Piano_Gioco *m, struct Blocco b, int piano)</div><div class="ttdef"><b>Definition:</b> tetris_operations.c:5</div></div>
+<div class="ttc" id="atetris__operations_8h_html_a984024d420f568332f6dd7735016d413"><div class="ttname"><a href="tetris__operations_8h.html#a984024d420f568332f6dd7735016d413">inserisci_blocco_score</a></div><div class="ttdeci">int inserisci_blocco_score(struct Piano_Gioco *m, struct Blocco b)</div><div class="ttdef"><b>Definition:</b> tetris_operations.c:144</div></div>
+<div class="ttc" id="atetris__operations_8h_html_aa50919b9d7d5632ccebeeb1b0fc26abd"><div class="ttname"><a href="tetris__operations_8h.html#aa50919b9d7d5632ccebeeb1b0fc26abd">penalita</a></div><div class="ttdeci">void penalita(struct Piano_Gioco *m, int score)</div><div class="ttdef"><b>Definition:</b> tetris_operations.c:92</div></div>
+<div class="ttc" id="atetris__operations_8h_html_ad0be42d727c77cf8cfb57060ee0997dc"><div class="ttname"><a href="tetris__operations_8h.html#ad0be42d727c77cf8cfb57060ee0997dc">elimina_riga</a></div><div class="ttdeci">void elimina_riga(struct Piano_Gioco *m, int riga)</div><div class="ttdef"><b>Definition:</b> tetris_operations.c:47</div></div>
+<div class="ttc" id="atetris__operations_8h_html_aeb0ce53c8ebcd57f7e54aa21005e2126"><div class="ttname"><a href="tetris__operations_8h.html#aeb0ce53c8ebcd57f7e54aa21005e2126">caduta_blocco</a></div><div class="ttdeci">int caduta_blocco(struct Piano_Gioco *m, struct Blocco b, int piano)</div><div class="ttdef"><b>Definition:</b> tetris_operations.c:18</div></div>
+<div class="ttc" id="atetris__operations_8h_html_af1debee4399a9e7e9867a4d729b89924"><div class="ttname"><a href="tetris__operations_8h.html#af1debee4399a9e7e9867a4d729b89924">inserisci_blocco_multi</a></div><div class="ttdeci">int inserisci_blocco_multi(struct Piano_Gioco *m1, struct Piano_Gioco *m2, struct Blocco b)</div><div class="ttdef"><b>Definition:</b> tetris_operations.c:38</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generato da&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3
+</small></address>
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.3"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>X-TETRIS:  File sorgente NPC_tetris.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">X-TETRIS<span id="projectnumber">&#160;1.00</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generato da Doxygen 1.9.3 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'Cerca','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Cerca');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">NPC_tetris.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="_n_p_c__tetris_8h.html">Vai alla documentazione di questo file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#ifndef TETRISUNIVE_NPC_TETRIS_H</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#define TETRISUNIVE_NPC_TETRIS_H</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &lt;stdio.h&gt;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="keywordtype">int</span> <a class="code hl_function" href="_n_p_c__tetris_8h.html#a1818bb5c2544b10ae180a6721d11fe61">choose_block</a>(<span class="keywordtype">int</span> *n_block, <span class="keywordtype">int</span> *rot, <span class="keyword">struct</span> <a class="code hl_struct" href="struct_blocco.html">Blocco</a> *v, <span class="keyword">struct</span> <a class="code hl_struct" href="struct_piano___gioco.html">Piano_Gioco</a> p);</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="keyword">struct </span><a class="code hl_struct" href="struct_piano___gioco.html">Piano_Gioco</a> <a class="code hl_function" href="_n_p_c__tetris_8h.html#acc75e9d6fb87a661ed80894c7316fd80">p_copia</a>(struct  <a class="code hl_struct" href="struct_piano___gioco.html">Piano_Gioco</a> p);</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="keywordtype">int</span> <a class="code hl_function" href="_n_p_c__tetris_8h.html#a62de51e6629ad4f6a85e63dd43764a3f">control_pos</a>(<span class="keyword">struct</span> <a class="code hl_struct" href="struct_blocco.html">Blocco</a> b, <span class="keywordtype">int</span> pos);</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="keywordtype">int</span> <a class="code hl_function" href="_n_p_c__tetris_8h.html#a5d40836564ee84ee2917d63cbe53b225">control_nbloc</a>(<span class="keyword">struct</span> <a class="code hl_struct" href="struct_blocco.html">Blocco</a> *v, <span class="keywordtype">int</span> nbloc);</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span><span class="keywordtype">int</span> <a class="code hl_function" href="_n_p_c__tetris_8h.html#a48523e0518a631dd4d1df43cff782cc7">control_rot</a>(<span class="keywordtype">int</span> rot, <span class="keywordtype">int</span> n_block);</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span><span class="keywordtype">int</span> <a class="code hl_function" href="_n_p_c__tetris_8h.html#a05702d93b6c50cc560304603dafa4deb">score_play</a>(<span class="keyword">struct</span> <a class="code hl_struct" href="struct_blocco.html">Blocco</a> *v, <span class="keyword">struct</span> <a class="code hl_struct" href="struct_piano___gioco.html">Piano_Gioco</a> p, <span class="keywordtype">int</span> depth, <span class="keywordtype">int</span> pos, <span class="keywordtype">int</span> rot, <span class="keywordtype">int</span> nbloc);</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span> </div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span><span class="keywordtype">int</span> <a class="code hl_function" href="_n_p_c__tetris_8h.html#a189d1732754e01998817f7e09195536e">top_play</a>(<span class="keywordtype">int</span> score, <span class="keyword">struct</span> <a class="code hl_struct" href="struct_blocco.html">Blocco</a> *v);</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span> </div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="a_n_p_c__tetris_8h_html_a05702d93b6c50cc560304603dafa4deb"><div class="ttname"><a href="_n_p_c__tetris_8h.html#a05702d93b6c50cc560304603dafa4deb">score_play</a></div><div class="ttdeci">int score_play(struct Blocco *v, struct Piano_Gioco p, int depth, int pos, int rot, int nbloc)</div><div class="ttdef"><b>Definition:</b> NPC_tetris.c:65</div></div>
+<div class="ttc" id="a_n_p_c__tetris_8h_html_a1818bb5c2544b10ae180a6721d11fe61"><div class="ttname"><a href="_n_p_c__tetris_8h.html#a1818bb5c2544b10ae180a6721d11fe61">choose_block</a></div><div class="ttdeci">int choose_block(int *n_block, int *rot, struct Blocco *v, struct Piano_Gioco p)</div><div class="ttdef"><b>Definition:</b> NPC_tetris.c:124</div></div>
+<div class="ttc" id="a_n_p_c__tetris_8h_html_a189d1732754e01998817f7e09195536e"><div class="ttname"><a href="_n_p_c__tetris_8h.html#a189d1732754e01998817f7e09195536e">top_play</a></div><div class="ttdeci">int top_play(int score, struct Blocco *v)</div><div class="ttdef"><b>Definition:</b> NPC_tetris.c:102</div></div>
+<div class="ttc" id="a_n_p_c__tetris_8h_html_a48523e0518a631dd4d1df43cff782cc7"><div class="ttname"><a href="_n_p_c__tetris_8h.html#a48523e0518a631dd4d1df43cff782cc7">control_rot</a></div><div class="ttdeci">int control_rot(int rot, int n_block)</div><div class="ttdef"><b>Definition:</b> NPC_tetris.c:57</div></div>
+<div class="ttc" id="a_n_p_c__tetris_8h_html_a5d40836564ee84ee2917d63cbe53b225"><div class="ttname"><a href="_n_p_c__tetris_8h.html#a5d40836564ee84ee2917d63cbe53b225">control_nbloc</a></div><div class="ttdeci">int control_nbloc(struct Blocco *v, int nbloc)</div><div class="ttdef"><b>Definition:</b> NPC_tetris.c:45</div></div>
+<div class="ttc" id="a_n_p_c__tetris_8h_html_a62de51e6629ad4f6a85e63dd43764a3f"><div class="ttname"><a href="_n_p_c__tetris_8h.html#a62de51e6629ad4f6a85e63dd43764a3f">control_pos</a></div><div class="ttdeci">int control_pos(struct Blocco b, int pos)</div><div class="ttdef"><b>Definition:</b> NPC_tetris.c:20</div></div>
+<div class="ttc" id="a_n_p_c__tetris_8h_html_acc75e9d6fb87a661ed80894c7316fd80"><div class="ttname"><a href="_n_p_c__tetris_8h.html#acc75e9d6fb87a661ed80894c7316fd80">p_copia</a></div><div class="ttdeci">struct Piano_Gioco p_copia(struct Piano_Gioco p)</div><div class="ttdef"><b>Definition:</b> NPC_tetris.c:9</div></div>
+<div class="ttc" id="astruct_blocco_html"><div class="ttname"><a href="struct_blocco.html">Blocco</a></div><div class="ttdef"><b>Definition:</b> tetris_components.h:16</div></div>
+<div class="ttc" id="astruct_piano___gioco_html"><div class="ttname"><a href="struct_piano___gioco.html">Piano_Gioco</a></div><div class="ttdef"><b>Definition:</b> tetris_components.h:26</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generato da&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3
+</small></address>
+</body>
+</html>
