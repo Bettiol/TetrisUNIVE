@@ -1,0 +1,79 @@
+\hypertarget{input__control_8h}{}\doxysection{Riferimenti per il file input\+\_\+control.\+h}
+\label{input__control_8h}\index{input\_control.h@{input\_control.h}}
+\doxysubsection*{Funzioni}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{input__control_8h_a119a7848f841001aff32cf9a2557317d}{controllo\+\_\+input}} (int $\ast$rot, int $\ast$pos, int $\ast$nbloc, struct \mbox{\hyperlink{struct_blocco}{Blocco}} $\ast$v)
+\item 
+int \mbox{\hyperlink{input__control_8h_ad9441fea250aa301fd3dd995d4a26b7e}{controllo\+\_\+rot}} ()
+\item 
+int \mbox{\hyperlink{input__control_8h_ab599e3a249773624f7d52c82c61c736a}{controllo\+\_\+pos}} (struct \mbox{\hyperlink{struct_blocco}{Blocco}} b)
+\item 
+int \mbox{\hyperlink{input__control_8h_a29ea16c6e2f9bf622c638cdbce7be5f7}{controllo\+\_\+nbloc}} (struct \mbox{\hyperlink{struct_blocco}{Blocco}} $\ast$v)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descrizione dettagliata}
+\begin{DoxyAuthor}{Autori}
+Bettiol Luca, Brognera Enrico 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Data}
+27/01/2022 
+\end{DoxyDate}
+
+
+\doxysubsection{Documentazione delle funzioni}
+\mbox{\Hypertarget{input__control_8h_a119a7848f841001aff32cf9a2557317d}\label{input__control_8h_a119a7848f841001aff32cf9a2557317d}} 
+\index{input\_control.h@{input\_control.h}!controllo\_input@{controllo\_input}}
+\index{controllo\_input@{controllo\_input}!input\_control.h@{input\_control.h}}
+\doxysubsubsection{\texorpdfstring{controllo\_input()}{controllo\_input()}}
+{\footnotesize\ttfamily void controllo\+\_\+input (\begin{DoxyParamCaption}\item[{int $\ast$}]{rot,  }\item[{int $\ast$}]{pos,  }\item[{int $\ast$}]{nbloc,  }\item[{struct \mbox{\hyperlink{struct_blocco}{Blocco}} $\ast$}]{v }\end{DoxyParamCaption})}
+
+Effettua la richiesta e la verifica di tutti i parametri per l\textquotesingle{}inserimento di un tetramino 
+\begin{DoxyParams}{Parametri}
+{\em rot} & la rotazione \\
+\hline
+{\em pos} & la posizione \\
+\hline
+{\em nbloc} & il numero del tetramino \\
+\hline
+{\em v} & il vettore contenente la descrizione di ciascun tetramino \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{input__control_8h_a29ea16c6e2f9bf622c638cdbce7be5f7}\label{input__control_8h_a29ea16c6e2f9bf622c638cdbce7be5f7}} 
+\index{input\_control.h@{input\_control.h}!controllo\_nbloc@{controllo\_nbloc}}
+\index{controllo\_nbloc@{controllo\_nbloc}!input\_control.h@{input\_control.h}}
+\doxysubsubsection{\texorpdfstring{controllo\_nbloc()}{controllo\_nbloc()}}
+{\footnotesize\ttfamily int controllo\+\_\+nbloc (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{struct_blocco}{Blocco}} $\ast$}]{v }\end{DoxyParamCaption})}
+
+Effettua la richiesta dell\textquotesingle{}input \textquotesingle{}numero del tetramino\textquotesingle{} e ne verifica la correttezza 
+\begin{DoxyParams}{Parametri}
+{\em v} & il vettore contenente il numero di tetramino rimanenti \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Restituisce}
+il numero del tetramino 
+\end{DoxyReturn}
+\mbox{\Hypertarget{input__control_8h_ab599e3a249773624f7d52c82c61c736a}\label{input__control_8h_ab599e3a249773624f7d52c82c61c736a}} 
+\index{input\_control.h@{input\_control.h}!controllo\_pos@{controllo\_pos}}
+\index{controllo\_pos@{controllo\_pos}!input\_control.h@{input\_control.h}}
+\doxysubsubsection{\texorpdfstring{controllo\_pos()}{controllo\_pos()}}
+{\footnotesize\ttfamily int controllo\+\_\+pos (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{struct_blocco}{Blocco}}}]{b }\end{DoxyParamCaption})}
+
+Effettua la richiesta dell\textquotesingle{}input \textquotesingle{}posizione\textquotesingle{} e ne verifica la correttezza 
+\begin{DoxyParams}{Parametri}
+{\em b} & il blocco selezionato di cui si vuole richiedere la posizione \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Restituisce}
+la posizione del tetramino 
+\end{DoxyReturn}
+\mbox{\Hypertarget{input__control_8h_ad9441fea250aa301fd3dd995d4a26b7e}\label{input__control_8h_ad9441fea250aa301fd3dd995d4a26b7e}} 
+\index{input\_control.h@{input\_control.h}!controllo\_rot@{controllo\_rot}}
+\index{controllo\_rot@{controllo\_rot}!input\_control.h@{input\_control.h}}
+\doxysubsubsection{\texorpdfstring{controllo\_rot()}{controllo\_rot()}}
+{\footnotesize\ttfamily int controllo\+\_\+rot (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Effetua la richiesta dell\textquotesingle{}input \textquotesingle{}rotazione\textquotesingle{} e ne verifica la correttezza \begin{DoxyReturn}{Restituisce}
+la rotazione del tetramino 
+\end{DoxyReturn}

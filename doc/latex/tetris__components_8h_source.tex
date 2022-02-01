@@ -1,0 +1,32 @@
+\hypertarget{tetris__components_8h_source}{}\doxysection{tetris\+\_\+components.\+h}
+\mbox{\hyperlink{tetris__components_8h}{Vai alla documentazione di questo file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#ifndef TETRISUNIVE\_TETRIS\_COMPONENTS\_H}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#define TETRISUNIVE\_TETRIS\_COMPONENTS\_H}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#define N\_BLOCCHI  7}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#define N\_RIGHE  15}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#define N\_COLONNE  10}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{16 \textcolor{keyword}{struct }\mbox{\hyperlink{struct_blocco}{Blocco}}\{}
+\DoxyCodeLine{17     \textcolor{keywordtype}{int} forma[4][4];}
+\DoxyCodeLine{18     \textcolor{keywordtype}{int} rotazione;}
+\DoxyCodeLine{19     \textcolor{keywordtype}{int} pos\_x;}
+\DoxyCodeLine{20     \textcolor{keywordtype}{int} num\_blocchi;}
+\DoxyCodeLine{21 \};}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{26 \textcolor{keyword}{struct }\mbox{\hyperlink{struct_piano___gioco}{Piano\_Gioco}}\{}
+\DoxyCodeLine{27     \textcolor{keywordtype}{int} matrice[N\_RIGHE+3][N\_COLONNE];}
+\DoxyCodeLine{28     \textcolor{keywordtype}{int} score;}
+\DoxyCodeLine{29 \};}
+\DoxyCodeLine{30 }
+\DoxyCodeLine{42 \textcolor{keywordtype}{void} \mbox{\hyperlink{tetris__components_8h_aa01e3df8f985377226305f2aa7376e6d}{inizializza\_blocchi}}(\textcolor{keyword}{struct} \mbox{\hyperlink{struct_blocco}{Blocco}} *blocchi, \textcolor{keywordtype}{int} num\_blocchi);}
+\DoxyCodeLine{43 }
+\DoxyCodeLine{49 \textcolor{keywordtype}{void} \mbox{\hyperlink{tetris__components_8h_abf112fc0aa343ace9f1d17c15a34c1f7}{flip\_blocco}}(\textcolor{keyword}{struct} \mbox{\hyperlink{struct_blocco}{Blocco}} *b, \textcolor{keywordtype}{int} rot);}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{56 \textcolor{keywordtype}{void} \mbox{\hyperlink{tetris__components_8h_adeaeddee3cd06be31d4acf466abc4dc5}{inizializza\_matrice}}(\textcolor{keyword}{struct} \mbox{\hyperlink{struct_piano___gioco}{Piano\_Gioco}} *m);}
+\DoxyCodeLine{57 }
+\DoxyCodeLine{58 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

@@ -162,4 +162,8 @@ fabric.properties
 # https://plugins.jetbrains.com/plugin/12206-codestream
 .idea/codestream.xml
 
+<<<<<<< HEAD
 # End of https://www.toptal.com/developers/gitignore/api/c,clion
+=======
+# End of https://www.toptal.com/developers/gitignore/api/c,clion
+>>>>>>> release/1.00

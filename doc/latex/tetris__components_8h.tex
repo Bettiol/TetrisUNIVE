@@ -1,0 +1,79 @@
+\hypertarget{tetris__components_8h}{}\doxysection{Riferimenti per il file tetris\+\_\+components.\+h}
+\label{tetris__components_8h}\index{tetris\_components.h@{tetris\_components.h}}
+\doxysubsection*{Strutture dati}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_blocco}{Blocco}}
+\item 
+struct \mbox{\hyperlink{struct_piano___gioco}{Piano\+\_\+\+Gioco}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Definizioni}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{tetris__components_8h_a5c5cb89ed90bd40760fd2415cdc2dab1}\label{tetris__components_8h_a5c5cb89ed90bd40760fd2415cdc2dab1}} 
+\#define {\bfseries N\+\_\+\+BLOCCHI}~7
+\item 
+\mbox{\Hypertarget{tetris__components_8h_a98f72ddfc37f797650b3d9224b54e752}\label{tetris__components_8h_a98f72ddfc37f797650b3d9224b54e752}} 
+\#define {\bfseries N\+\_\+\+RIGHE}~15
+\item 
+\mbox{\Hypertarget{tetris__components_8h_a57441ea9ba521c9b61fb87c11e031415}\label{tetris__components_8h_a57441ea9ba521c9b61fb87c11e031415}} 
+\#define {\bfseries N\+\_\+\+COLONNE}~10
+\end{DoxyCompactItemize}
+\doxysubsection*{Funzioni}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{tetris__components_8h_aa01e3df8f985377226305f2aa7376e6d}{inizializza\+\_\+blocchi}} (struct \mbox{\hyperlink{struct_blocco}{Blocco}} $\ast$blocchi, int num\+\_\+blocchi)
+\item 
+void \mbox{\hyperlink{tetris__components_8h_abf112fc0aa343ace9f1d17c15a34c1f7}{flip\+\_\+blocco}} (struct \mbox{\hyperlink{struct_blocco}{Blocco}} $\ast$b, int rot)
+\item 
+void \mbox{\hyperlink{tetris__components_8h_adeaeddee3cd06be31d4acf466abc4dc5}{inizializza\+\_\+matrice}} (struct \mbox{\hyperlink{struct_piano___gioco}{Piano\+\_\+\+Gioco}} $\ast$m)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descrizione dettagliata}
+\begin{DoxyAuthor}{Autori}
+Bettiol Luca, Brognera Enrico 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Data}
+27/01/2022 
+\end{DoxyDate}
+
+
+\doxysubsection{Documentazione delle funzioni}
+\mbox{\Hypertarget{tetris__components_8h_abf112fc0aa343ace9f1d17c15a34c1f7}\label{tetris__components_8h_abf112fc0aa343ace9f1d17c15a34c1f7}} 
+\index{tetris\_components.h@{tetris\_components.h}!flip\_blocco@{flip\_blocco}}
+\index{flip\_blocco@{flip\_blocco}!tetris\_components.h@{tetris\_components.h}}
+\doxysubsubsection{\texorpdfstring{flip\_blocco()}{flip\_blocco()}}
+{\footnotesize\ttfamily void flip\+\_\+blocco (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{struct_blocco}{Blocco}} $\ast$}]{b,  }\item[{int}]{rot }\end{DoxyParamCaption})}
+
+Routa un tetramino 
+\begin{DoxyParams}{Parametri}
+{\em b} & tetramino da ruotare \\
+\hline
+{\em rot} & rotazione \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{tetris__components_8h_aa01e3df8f985377226305f2aa7376e6d}\label{tetris__components_8h_aa01e3df8f985377226305f2aa7376e6d}} 
+\index{tetris\_components.h@{tetris\_components.h}!inizializza\_blocchi@{inizializza\_blocchi}}
+\index{inizializza\_blocchi@{inizializza\_blocchi}!tetris\_components.h@{tetris\_components.h}}
+\doxysubsubsection{\texorpdfstring{inizializza\_blocchi()}{inizializza\_blocchi()}}
+{\footnotesize\ttfamily void inizializza\+\_\+blocchi (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{struct_blocco}{Blocco}} $\ast$}]{blocchi,  }\item[{int}]{num\+\_\+blocchi }\end{DoxyParamCaption})}
+
+Inizializza il vettore di tetramini, ciascuno sarà composto da una matrice dove il tetramino è rappresentato con un numero divero da 0 mentre gli spazi vuoti saranno 0\+: il primo tetramino è la linea (1) il secondo tetramino è il quadrato (2) il terzo tetramino è L\+\_\+sinistra (3) il quarto tetramino è L\+\_\+destra (4) il quinto tetramino è S\+\_\+sinistra (5) il sesto tetramino è S\+\_\+destra (6) il settimo tetramino è la T (7) 
+\begin{DoxyParams}{Parametri}
+{\em blocchi} & vettore da inizializzare \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{tetris__components_8h_adeaeddee3cd06be31d4acf466abc4dc5}\label{tetris__components_8h_adeaeddee3cd06be31d4acf466abc4dc5}} 
+\index{tetris\_components.h@{tetris\_components.h}!inizializza\_matrice@{inizializza\_matrice}}
+\index{inizializza\_matrice@{inizializza\_matrice}!tetris\_components.h@{tetris\_components.h}}
+\doxysubsubsection{\texorpdfstring{inizializza\_matrice()}{inizializza\_matrice()}}
+{\footnotesize\ttfamily void inizializza\+\_\+matrice (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{struct_piano___gioco}{Piano\+\_\+\+Gioco}} $\ast$}]{m }\end{DoxyParamCaption})}
+
+Inizializza il piano di gioco, quindi la matrice che lo compone 
+\begin{DoxyParams}{Parametri}
+{\em m} & piano di gioco da inizializzare \\
+\hline
+{\em num\+\_\+blocchi} & numero di tetramini disponibili \\
+\hline
+\end{DoxyParams}

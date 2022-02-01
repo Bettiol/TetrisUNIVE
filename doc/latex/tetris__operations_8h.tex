@@ -1,0 +1,195 @@
+\hypertarget{tetris__operations_8h}{}\doxysection{Riferimenti per il file tetris\+\_\+operations.\+h}
+\label{tetris__operations_8h}\index{tetris\_operations.h@{tetris\_operations.h}}
+\doxysubsection*{Funzioni}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{tetris__operations_8h_a8e267d4318eb0dede32e72677f7acd90}{verifica\+\_\+posizione\+\_\+blocco}} (struct \mbox{\hyperlink{struct_piano___gioco}{Piano\+\_\+\+Gioco}} $\ast$m, struct \mbox{\hyperlink{struct_blocco}{Blocco}} b, int piano)
+\item 
+int \mbox{\hyperlink{tetris__operations_8h_aeb0ce53c8ebcd57f7e54aa21005e2126}{caduta\+\_\+blocco}} (struct \mbox{\hyperlink{struct_piano___gioco}{Piano\+\_\+\+Gioco}} $\ast$m, struct \mbox{\hyperlink{struct_blocco}{Blocco}} b, int piano)
+\item 
+int \mbox{\hyperlink{tetris__operations_8h_a5e262f2285da6ac45d314bd23313e48a}{inserisci\+\_\+blocco}} (struct \mbox{\hyperlink{struct_piano___gioco}{Piano\+\_\+\+Gioco}} $\ast$m, struct \mbox{\hyperlink{struct_blocco}{Blocco}} b)
+\item 
+int \mbox{\hyperlink{tetris__operations_8h_af1debee4399a9e7e9867a4d729b89924}{inserisci\+\_\+blocco\+\_\+multi}} (struct \mbox{\hyperlink{struct_piano___gioco}{Piano\+\_\+\+Gioco}} $\ast$m1, struct \mbox{\hyperlink{struct_piano___gioco}{Piano\+\_\+\+Gioco}} $\ast$m2, struct \mbox{\hyperlink{struct_blocco}{Blocco}} b)
+\item 
+void \mbox{\hyperlink{tetris__operations_8h_ad0be42d727c77cf8cfb57060ee0997dc}{elimina\+\_\+riga}} (struct \mbox{\hyperlink{struct_piano___gioco}{Piano\+\_\+\+Gioco}} $\ast$m, int riga)
+\item 
+int \mbox{\hyperlink{tetris__operations_8h_a8c99cda6f56fdbe1935b63655b2e70f6}{score\+\_\+control}} (struct \mbox{\hyperlink{struct_piano___gioco}{Piano\+\_\+\+Gioco}} $\ast$m)
+\item 
+void \mbox{\hyperlink{tetris__operations_8h_aa50919b9d7d5632ccebeeb1b0fc26abd}{penalita}} (struct \mbox{\hyperlink{struct_piano___gioco}{Piano\+\_\+\+Gioco}} $\ast$m, int score)
+\item 
+int \mbox{\hyperlink{tetris__operations_8h_a8564f8674ad93399d7bd941751436037}{fine\+\_\+blocchi}} (struct \mbox{\hyperlink{struct_blocco}{Blocco}} $\ast$v)
+\item 
+int \mbox{\hyperlink{tetris__operations_8h_a5abf070b827fbe229a8f4f432868abcc}{inserisci\+\_\+bloccco\+\_\+posizione}} (struct \mbox{\hyperlink{struct_piano___gioco}{Piano\+\_\+\+Gioco}} $\ast$m, struct \mbox{\hyperlink{struct_blocco}{Blocco}} b, int piano)
+\item 
+int \mbox{\hyperlink{tetris__operations_8h_a984024d420f568332f6dd7735016d413}{inserisci\+\_\+blocco\+\_\+score}} (struct \mbox{\hyperlink{struct_piano___gioco}{Piano\+\_\+\+Gioco}} $\ast$m, struct \mbox{\hyperlink{struct_blocco}{Blocco}} b)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descrizione dettagliata}
+\begin{DoxyAuthor}{Autori}
+Bettiol Luca, Brognera Enrico 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Data}
+27/01/2022 
+\end{DoxyDate}
+
+
+\doxysubsection{Documentazione delle funzioni}
+\mbox{\Hypertarget{tetris__operations_8h_aeb0ce53c8ebcd57f7e54aa21005e2126}\label{tetris__operations_8h_aeb0ce53c8ebcd57f7e54aa21005e2126}} 
+\index{tetris\_operations.h@{tetris\_operations.h}!caduta\_blocco@{caduta\_blocco}}
+\index{caduta\_blocco@{caduta\_blocco}!tetris\_operations.h@{tetris\_operations.h}}
+\doxysubsubsection{\texorpdfstring{caduta\_blocco()}{caduta\_blocco()}}
+{\footnotesize\ttfamily int caduta\+\_\+blocco (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{struct_piano___gioco}{Piano\+\_\+\+Gioco}} $\ast$}]{m,  }\item[{struct \mbox{\hyperlink{struct_blocco}{Blocco}}}]{b,  }\item[{int}]{piano }\end{DoxyParamCaption})}
+
+Verifica la correttezza del tetramino nel piano selezionato, se è corretto prova a inserire il tetramino nel piano sucessivo, altrimenti lo inserisce sul piano precedente 
+\begin{DoxyParams}{Parametri}
+{\em m} & piano di gioco \\
+\hline
+{\em b} & tetramino \\
+\hline
+{\em piano} & livello del piano da inserire \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Restituisce}
+1 se il giocatore ha perso 0 altrimenti 
+\end{DoxyReturn}
+\mbox{\Hypertarget{tetris__operations_8h_ad0be42d727c77cf8cfb57060ee0997dc}\label{tetris__operations_8h_ad0be42d727c77cf8cfb57060ee0997dc}} 
+\index{tetris\_operations.h@{tetris\_operations.h}!elimina\_riga@{elimina\_riga}}
+\index{elimina\_riga@{elimina\_riga}!tetris\_operations.h@{tetris\_operations.h}}
+\doxysubsubsection{\texorpdfstring{elimina\_riga()}{elimina\_riga()}}
+{\footnotesize\ttfamily void elimina\+\_\+riga (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{struct_piano___gioco}{Piano\+\_\+\+Gioco}} $\ast$}]{m,  }\item[{int}]{riga }\end{DoxyParamCaption})}
+
+Elimina una riga dal piano di gioco 
+\begin{DoxyParams}{Parametri}
+{\em m} & piano di gioco \\
+\hline
+{\em riga} & riga da eliminare \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{tetris__operations_8h_a8564f8674ad93399d7bd941751436037}\label{tetris__operations_8h_a8564f8674ad93399d7bd941751436037}} 
+\index{tetris\_operations.h@{tetris\_operations.h}!fine\_blocchi@{fine\_blocchi}}
+\index{fine\_blocchi@{fine\_blocchi}!tetris\_operations.h@{tetris\_operations.h}}
+\doxysubsubsection{\texorpdfstring{fine\_blocchi()}{fine\_blocchi()}}
+{\footnotesize\ttfamily int fine\+\_\+blocchi (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{struct_blocco}{Blocco}} $\ast$}]{v }\end{DoxyParamCaption})}
+
+Verifica se sono finiti tutti i blocchi disponibili 
+\begin{DoxyParams}{Parametri}
+{\em v} & il vettore contenente la descrizione di ciascun tetramino \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Restituisce}
+1 se sono finiti i tetramini 0 altrimenti 
+\end{DoxyReturn}
+\mbox{\Hypertarget{tetris__operations_8h_a5abf070b827fbe229a8f4f432868abcc}\label{tetris__operations_8h_a5abf070b827fbe229a8f4f432868abcc}} 
+\index{tetris\_operations.h@{tetris\_operations.h}!inserisci\_bloccco\_posizione@{inserisci\_bloccco\_posizione}}
+\index{inserisci\_bloccco\_posizione@{inserisci\_bloccco\_posizione}!tetris\_operations.h@{tetris\_operations.h}}
+\doxysubsubsection{\texorpdfstring{inserisci\_bloccco\_posizione()}{inserisci\_bloccco\_posizione()}}
+{\footnotesize\ttfamily int inserisci\+\_\+bloccco\+\_\+posizione (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{struct_piano___gioco}{Piano\+\_\+\+Gioco}} $\ast$}]{m,  }\item[{struct \mbox{\hyperlink{struct_blocco}{Blocco}}}]{b,  }\item[{int}]{piano }\end{DoxyParamCaption})}
+
+Inserisce un tetramino nel piano di gioco in un livello 
+\begin{DoxyParams}{Parametri}
+{\em m} & piano di gioco \\
+\hline
+{\em b} & tetramino \\
+\hline
+{\em piano} & il livello del piano di gioco \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Restituisce}
+1 se il giocatore ha perso 0 altrimenti 
+\end{DoxyReturn}
+\mbox{\Hypertarget{tetris__operations_8h_a5e262f2285da6ac45d314bd23313e48a}\label{tetris__operations_8h_a5e262f2285da6ac45d314bd23313e48a}} 
+\index{tetris\_operations.h@{tetris\_operations.h}!inserisci\_blocco@{inserisci\_blocco}}
+\index{inserisci\_blocco@{inserisci\_blocco}!tetris\_operations.h@{tetris\_operations.h}}
+\doxysubsubsection{\texorpdfstring{inserisci\_blocco()}{inserisci\_blocco()}}
+{\footnotesize\ttfamily int inserisci\+\_\+blocco (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{struct_piano___gioco}{Piano\+\_\+\+Gioco}} $\ast$}]{m,  }\item[{struct \mbox{\hyperlink{struct_blocco}{Blocco}}}]{b }\end{DoxyParamCaption})}
+
+Inserisce un tetramino nel piano di gioco nella modalità single\+\_\+player 
+\begin{DoxyParams}{Parametri}
+{\em m} & piano di gioco \\
+\hline
+{\em b} & tetramino da inserire \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Restituisce}
+1 se il giocatore ha perso 0 altrimenti 
+\end{DoxyReturn}
+\mbox{\Hypertarget{tetris__operations_8h_af1debee4399a9e7e9867a4d729b89924}\label{tetris__operations_8h_af1debee4399a9e7e9867a4d729b89924}} 
+\index{tetris\_operations.h@{tetris\_operations.h}!inserisci\_blocco\_multi@{inserisci\_blocco\_multi}}
+\index{inserisci\_blocco\_multi@{inserisci\_blocco\_multi}!tetris\_operations.h@{tetris\_operations.h}}
+\doxysubsubsection{\texorpdfstring{inserisci\_blocco\_multi()}{inserisci\_blocco\_multi()}}
+{\footnotesize\ttfamily int inserisci\+\_\+blocco\+\_\+multi (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{struct_piano___gioco}{Piano\+\_\+\+Gioco}} $\ast$}]{m1,  }\item[{struct \mbox{\hyperlink{struct_piano___gioco}{Piano\+\_\+\+Gioco}} $\ast$}]{m2,  }\item[{struct \mbox{\hyperlink{struct_blocco}{Blocco}}}]{b }\end{DoxyParamCaption})}
+
+Inserisce un tetramino nel piano di gioco nella modalità multi\+\_\+player 
+\begin{DoxyParams}{Parametri}
+{\em m1} & piano di gioco \\
+\hline
+{\em m2} & piano di gioco avversario \\
+\hline
+{\em b} & tetramino da inserire \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Restituisce}
+1 se il giocatore ha perso 0 altrimenti 
+\end{DoxyReturn}
+\mbox{\Hypertarget{tetris__operations_8h_a984024d420f568332f6dd7735016d413}\label{tetris__operations_8h_a984024d420f568332f6dd7735016d413}} 
+\index{tetris\_operations.h@{tetris\_operations.h}!inserisci\_blocco\_score@{inserisci\_blocco\_score}}
+\index{inserisci\_blocco\_score@{inserisci\_blocco\_score}!tetris\_operations.h@{tetris\_operations.h}}
+\doxysubsubsection{\texorpdfstring{inserisci\_blocco\_score()}{inserisci\_blocco\_score()}}
+{\footnotesize\ttfamily int inserisci\+\_\+blocco\+\_\+score (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{struct_piano___gioco}{Piano\+\_\+\+Gioco}} $\ast$}]{m,  }\item[{struct \mbox{\hyperlink{struct_blocco}{Blocco}}}]{b }\end{DoxyParamCaption})}
+
+Inserisce un tetramino in un piano di gioco e ne restituisce il punteggio ottenuto 
+\begin{DoxyParams}{Parametri}
+{\em m} & piano di gioco \\
+\hline
+{\em b} & tetramino \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Restituisce}
+-\/1 se ha perso altrimenti il punteggio effettuato 
+\end{DoxyReturn}
+\mbox{\Hypertarget{tetris__operations_8h_aa50919b9d7d5632ccebeeb1b0fc26abd}\label{tetris__operations_8h_aa50919b9d7d5632ccebeeb1b0fc26abd}} 
+\index{tetris\_operations.h@{tetris\_operations.h}!penalita@{penalita}}
+\index{penalita@{penalita}!tetris\_operations.h@{tetris\_operations.h}}
+\doxysubsubsection{\texorpdfstring{penalita()}{penalita()}}
+{\footnotesize\ttfamily void penalita (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{struct_piano___gioco}{Piano\+\_\+\+Gioco}} $\ast$}]{m,  }\item[{int}]{score }\end{DoxyParamCaption})}
+
+Inverte le ultime due rige del piano di gioco se lo score è maggiore o uguale a 6 
+\begin{DoxyParams}{Parametri}
+{\em m} & piano di gioco avversario \\
+\hline
+{\em score} & punteggio effettuato \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{tetris__operations_8h_a8c99cda6f56fdbe1935b63655b2e70f6}\label{tetris__operations_8h_a8c99cda6f56fdbe1935b63655b2e70f6}} 
+\index{tetris\_operations.h@{tetris\_operations.h}!score\_control@{score\_control}}
+\index{score\_control@{score\_control}!tetris\_operations.h@{tetris\_operations.h}}
+\doxysubsubsection{\texorpdfstring{score\_control()}{score\_control()}}
+{\footnotesize\ttfamily int score\+\_\+control (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{struct_piano___gioco}{Piano\+\_\+\+Gioco}} $\ast$}]{m }\end{DoxyParamCaption})}
+
+Verifica e conta il punteggio il punteggio ottenuto ed elimina le eventuali rige completate 
+\begin{DoxyParams}{Parametri}
+{\em m} & piano di gioco \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Restituisce}
+il punteggio ottenuto 
+\end{DoxyReturn}
+\mbox{\Hypertarget{tetris__operations_8h_a8e267d4318eb0dede32e72677f7acd90}\label{tetris__operations_8h_a8e267d4318eb0dede32e72677f7acd90}} 
+\index{tetris\_operations.h@{tetris\_operations.h}!verifica\_posizione\_blocco@{verifica\_posizione\_blocco}}
+\index{verifica\_posizione\_blocco@{verifica\_posizione\_blocco}!tetris\_operations.h@{tetris\_operations.h}}
+\doxysubsubsection{\texorpdfstring{verifica\_posizione\_blocco()}{verifica\_posizione\_blocco()}}
+{\footnotesize\ttfamily int verifica\+\_\+posizione\+\_\+blocco (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{struct_piano___gioco}{Piano\+\_\+\+Gioco}} $\ast$}]{m,  }\item[{struct \mbox{\hyperlink{struct_blocco}{Blocco}}}]{b,  }\item[{int}]{piano }\end{DoxyParamCaption})}
+
+Verifica la correttezza del tetramino nel piano selezionato 
+\begin{DoxyParams}{Parametri}
+{\em m} & piano di gioco \\
+\hline
+{\em b} & tetramino \\
+\hline
+{\em piano} & livello del piano di gioco \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Restituisce}
+1 se è corretto 0 altrimenti 
+\end{DoxyReturn}

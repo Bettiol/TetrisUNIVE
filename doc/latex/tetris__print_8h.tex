@@ -1,0 +1,146 @@
+\hypertarget{tetris__print_8h}{}\doxysection{Riferimenti per il file tetris\+\_\+print.\+h}
+\label{tetris__print_8h}\index{tetris\_print.h@{tetris\_print.h}}
+\doxysubsection*{Funzioni}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{tetris__print_8h_a65f4c4a06c93bef885bdad1808a2c389}{stampa\+\_\+blocchi}} (struct \mbox{\hyperlink{struct_blocco}{Blocco}} $\ast$b)
+\item 
+void \mbox{\hyperlink{tetris__print_8h_aa7778d1f08f44dece5582517211cff68}{stampa\+\_\+matrice}} (struct \mbox{\hyperlink{struct_piano___gioco}{Piano\+\_\+\+Gioco}} m)
+\item 
+void \mbox{\hyperlink{tetris__print_8h_a51e32ab6bdda53dcbcb9ccc5b3c68880}{stampa\+\_\+colore}} (int colore)
+\item 
+void \mbox{\hyperlink{tetris__print_8h_a3567150e6bc6f9cdc0c2aae033444771}{stampa\+\_\+matrici}} (struct \mbox{\hyperlink{struct_piano___gioco}{Piano\+\_\+\+Gioco}} m1, struct \mbox{\hyperlink{struct_piano___gioco}{Piano\+\_\+\+Gioco}} m2)
+\item 
+void \mbox{\hyperlink{tetris__print_8h_a44704b86c739edac8707a1ea54963989}{stampa\+\_\+score}} (int p1, int p2)
+\item 
+void \mbox{\hyperlink{tetris__print_8h_aa29c57c3c03c367adf894b82432368cd}{stampa\+\_\+perso}} (int perso, int p1, int p2)
+\item 
+int \mbox{\hyperlink{tetris__print_8h_a3dd967b04b854d1e54cf4259e36b5e32}{fine\+Partita}} ()
+\item 
+void \mbox{\hyperlink{tetris__print_8h_ac51d0f0d2f3775959b88d640d9d72f5b}{centered\+Printf}} (char $\ast$s)
+\item 
+int \mbox{\hyperlink{tetris__print_8h_ae83fcdbeb2b6757fc741ae953b633ee1}{menu}} ()
+\item 
+void \mbox{\hyperlink{tetris__print_8h_a0a003a1ea8ce7b8f5c058d66ed95c637}{cleaner}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descrizione dettagliata}
+\begin{DoxyAuthor}{Autori}
+Bettiol Luca, Brognera Enrico 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Data}
+27/01/2022 
+\end{DoxyDate}
+
+
+\doxysubsection{Documentazione delle funzioni}
+\mbox{\Hypertarget{tetris__print_8h_ac51d0f0d2f3775959b88d640d9d72f5b}\label{tetris__print_8h_ac51d0f0d2f3775959b88d640d9d72f5b}} 
+\index{tetris\_print.h@{tetris\_print.h}!centeredPrintf@{centeredPrintf}}
+\index{centeredPrintf@{centeredPrintf}!tetris\_print.h@{tetris\_print.h}}
+\doxysubsubsection{\texorpdfstring{centeredPrintf()}{centeredPrintf()}}
+{\footnotesize\ttfamily void centered\+Printf (\begin{DoxyParamCaption}\item[{char $\ast$}]{s }\end{DoxyParamCaption})}
+
+Funzione che stampa una stringa al centro del terminale 
+\begin{DoxyParams}{Parametri}
+{\em s} & stringa da stampare \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{tetris__print_8h_a0a003a1ea8ce7b8f5c058d66ed95c637}\label{tetris__print_8h_a0a003a1ea8ce7b8f5c058d66ed95c637}} 
+\index{tetris\_print.h@{tetris\_print.h}!cleaner@{cleaner}}
+\index{cleaner@{cleaner}!tetris\_print.h@{tetris\_print.h}}
+\doxysubsubsection{\texorpdfstring{cleaner()}{cleaner()}}
+{\footnotesize\ttfamily void cleaner (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Funzione che pulisce lo schermo \mbox{\Hypertarget{tetris__print_8h_a3dd967b04b854d1e54cf4259e36b5e32}\label{tetris__print_8h_a3dd967b04b854d1e54cf4259e36b5e32}} 
+\index{tetris\_print.h@{tetris\_print.h}!finePartita@{finePartita}}
+\index{finePartita@{finePartita}!tetris\_print.h@{tetris\_print.h}}
+\doxysubsubsection{\texorpdfstring{finePartita()}{finePartita()}}
+{\footnotesize\ttfamily int fine\+Partita (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Funzione che interagisce con l\textquotesingle{}utente per uscire o andare al menu \begin{DoxyReturn}{Restituisce}
+la scelta dell\textquotesingle{}utente 
+\end{DoxyReturn}
+\mbox{\Hypertarget{tetris__print_8h_ae83fcdbeb2b6757fc741ae953b633ee1}\label{tetris__print_8h_ae83fcdbeb2b6757fc741ae953b633ee1}} 
+\index{tetris\_print.h@{tetris\_print.h}!menu@{menu}}
+\index{menu@{menu}!tetris\_print.h@{tetris\_print.h}}
+\doxysubsubsection{\texorpdfstring{menu()}{menu()}}
+{\footnotesize\ttfamily int menu (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Funzione che interagisce con l\textquotesingle{}utente nel menù \begin{DoxyReturn}{Restituisce}
+la scelta dell\textquotesingle{}utente 
+\end{DoxyReturn}
+\mbox{\Hypertarget{tetris__print_8h_a65f4c4a06c93bef885bdad1808a2c389}\label{tetris__print_8h_a65f4c4a06c93bef885bdad1808a2c389}} 
+\index{tetris\_print.h@{tetris\_print.h}!stampa\_blocchi@{stampa\_blocchi}}
+\index{stampa\_blocchi@{stampa\_blocchi}!tetris\_print.h@{tetris\_print.h}}
+\doxysubsubsection{\texorpdfstring{stampa\_blocchi()}{stampa\_blocchi()}}
+{\footnotesize\ttfamily void stampa\+\_\+blocchi (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{struct_blocco}{Blocco}} $\ast$}]{b }\end{DoxyParamCaption})}
+
+Funzione che stampa il blocchi utilizzabili e la loro quantità 
+\begin{DoxyParams}{Parametri}
+{\em b} & blocco \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{tetris__print_8h_a51e32ab6bdda53dcbcb9ccc5b3c68880}\label{tetris__print_8h_a51e32ab6bdda53dcbcb9ccc5b3c68880}} 
+\index{tetris\_print.h@{tetris\_print.h}!stampa\_colore@{stampa\_colore}}
+\index{stampa\_colore@{stampa\_colore}!tetris\_print.h@{tetris\_print.h}}
+\doxysubsubsection{\texorpdfstring{stampa\_colore()}{stampa\_colore()}}
+{\footnotesize\ttfamily void stampa\+\_\+colore (\begin{DoxyParamCaption}\item[{int}]{colore }\end{DoxyParamCaption})}
+
+Funzione che stampa \# colorato in base al blocco selezionato 
+\begin{DoxyParams}{Parametri}
+{\em colore} & numero del colore del blocco da stampare \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{tetris__print_8h_aa7778d1f08f44dece5582517211cff68}\label{tetris__print_8h_aa7778d1f08f44dece5582517211cff68}} 
+\index{tetris\_print.h@{tetris\_print.h}!stampa\_matrice@{stampa\_matrice}}
+\index{stampa\_matrice@{stampa\_matrice}!tetris\_print.h@{tetris\_print.h}}
+\doxysubsubsection{\texorpdfstring{stampa\_matrice()}{stampa\_matrice()}}
+{\footnotesize\ttfamily void stampa\+\_\+matrice (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{struct_piano___gioco}{Piano\+\_\+\+Gioco}}}]{m }\end{DoxyParamCaption})}
+
+Funzione che stampa il campo di gioco in modalità single player 
+\begin{DoxyParams}{Parametri}
+{\em m} & campo di gioco \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{tetris__print_8h_a3567150e6bc6f9cdc0c2aae033444771}\label{tetris__print_8h_a3567150e6bc6f9cdc0c2aae033444771}} 
+\index{tetris\_print.h@{tetris\_print.h}!stampa\_matrici@{stampa\_matrici}}
+\index{stampa\_matrici@{stampa\_matrici}!tetris\_print.h@{tetris\_print.h}}
+\doxysubsubsection{\texorpdfstring{stampa\_matrici()}{stampa\_matrici()}}
+{\footnotesize\ttfamily void stampa\+\_\+matrici (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{struct_piano___gioco}{Piano\+\_\+\+Gioco}}}]{m1,  }\item[{struct \mbox{\hyperlink{struct_piano___gioco}{Piano\+\_\+\+Gioco}}}]{m2 }\end{DoxyParamCaption})}
+
+Funzione che stampa i campi di gioco in modalità multi-\/player 
+\begin{DoxyParams}{Parametri}
+{\em m1} & campo di gioco player 1 \\
+\hline
+{\em m2} & campo di gioco player 2 \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{tetris__print_8h_aa29c57c3c03c367adf894b82432368cd}\label{tetris__print_8h_aa29c57c3c03c367adf894b82432368cd}} 
+\index{tetris\_print.h@{tetris\_print.h}!stampa\_perso@{stampa\_perso}}
+\index{stampa\_perso@{stampa\_perso}!tetris\_print.h@{tetris\_print.h}}
+\doxysubsubsection{\texorpdfstring{stampa\_perso()}{stampa\_perso()}}
+{\footnotesize\ttfamily void stampa\+\_\+perso (\begin{DoxyParamCaption}\item[{int}]{perso,  }\item[{int}]{p1,  }\item[{int}]{p2 }\end{DoxyParamCaption})}
+
+Funzione che stampa il vincitore se un payer fuoriesce dal campo di gioco 
+\begin{DoxyParams}{Parametri}
+{\em perso} & flag che viene ritornarto dalla funzione che insersce il tetramino nel piano di gioco \\
+\hline
+{\em p1} & flag che indicache che il player 1 è uscito da lcampo di gioco \\
+\hline
+{\em p2} & flag che indicache che il player 2 è uscito da lcampo di gioco \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{tetris__print_8h_a44704b86c739edac8707a1ea54963989}\label{tetris__print_8h_a44704b86c739edac8707a1ea54963989}} 
+\index{tetris\_print.h@{tetris\_print.h}!stampa\_score@{stampa\_score}}
+\index{stampa\_score@{stampa\_score}!tetris\_print.h@{tetris\_print.h}}
+\doxysubsubsection{\texorpdfstring{stampa\_score()}{stampa\_score()}}
+{\footnotesize\ttfamily void stampa\+\_\+score (\begin{DoxyParamCaption}\item[{int}]{p1,  }\item[{int}]{p2 }\end{DoxyParamCaption})}
+
+Funzione che stampa il punteggio e il vincitore 
+\begin{DoxyParams}{Parametri}
+{\em p1} & punteggio player 1 \\
+\hline
+{\em p2} & punteggio player 2 \\
+\hline
+\end{DoxyParams}

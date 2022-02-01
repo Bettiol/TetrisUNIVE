@@ -1,0 +1,154 @@
+\hypertarget{_n_p_c__tetris_8h}{}\doxysection{Riferimenti per il file NPC\+\_\+tetris.\+h}
+\label{_n_p_c__tetris_8h}\index{NPC\_tetris.h@{NPC\_tetris.h}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+\doxysubsection*{Funzioni}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{_n_p_c__tetris_8h_a1818bb5c2544b10ae180a6721d11fe61}{choose\+\_\+block}} (int $\ast$n\+\_\+block, int $\ast$rot, struct \mbox{\hyperlink{struct_blocco}{Blocco}} $\ast$v, struct \mbox{\hyperlink{struct_piano___gioco}{Piano\+\_\+\+Gioco}} p)
+\item 
+struct \mbox{\hyperlink{struct_piano___gioco}{Piano\+\_\+\+Gioco}} \mbox{\hyperlink{_n_p_c__tetris_8h_acc75e9d6fb87a661ed80894c7316fd80}{p\+\_\+copia}} (struct \mbox{\hyperlink{struct_piano___gioco}{Piano\+\_\+\+Gioco}} p)
+\item 
+int \mbox{\hyperlink{_n_p_c__tetris_8h_a62de51e6629ad4f6a85e63dd43764a3f}{control\+\_\+pos}} (struct \mbox{\hyperlink{struct_blocco}{Blocco}} b, int pos)
+\item 
+int \mbox{\hyperlink{_n_p_c__tetris_8h_a5d40836564ee84ee2917d63cbe53b225}{control\+\_\+nbloc}} (struct \mbox{\hyperlink{struct_blocco}{Blocco}} $\ast$v, int nbloc)
+\item 
+int \mbox{\hyperlink{_n_p_c__tetris_8h_a48523e0518a631dd4d1df43cff782cc7}{control\+\_\+rot}} (int rot, int n\+\_\+block)
+\item 
+int \mbox{\hyperlink{_n_p_c__tetris_8h_a05702d93b6c50cc560304603dafa4deb}{score\+\_\+play}} (struct \mbox{\hyperlink{struct_blocco}{Blocco}} $\ast$v, struct \mbox{\hyperlink{struct_piano___gioco}{Piano\+\_\+\+Gioco}} p, int depth, int pos, int rot, int nbloc)
+\item 
+int \mbox{\hyperlink{_n_p_c__tetris_8h_a189d1732754e01998817f7e09195536e}{top\+\_\+play}} (int score, struct \mbox{\hyperlink{struct_blocco}{Blocco}} $\ast$v)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descrizione dettagliata}
+\begin{DoxyAuthor}{Autori}
+Bettiol Luca, Brognera Enrico 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Data}
+27/01/2022 
+\end{DoxyDate}
+
+
+\doxysubsection{Documentazione delle funzioni}
+\mbox{\Hypertarget{_n_p_c__tetris_8h_a1818bb5c2544b10ae180a6721d11fe61}\label{_n_p_c__tetris_8h_a1818bb5c2544b10ae180a6721d11fe61}} 
+\index{NPC\_tetris.h@{NPC\_tetris.h}!choose\_block@{choose\_block}}
+\index{choose\_block@{choose\_block}!NPC\_tetris.h@{NPC\_tetris.h}}
+\doxysubsubsection{\texorpdfstring{choose\_block()}{choose\_block()}}
+{\footnotesize\ttfamily int choose\+\_\+block (\begin{DoxyParamCaption}\item[{int $\ast$}]{n\+\_\+block,  }\item[{int $\ast$}]{rot,  }\item[{struct \mbox{\hyperlink{struct_blocco}{Blocco}} $\ast$}]{v,  }\item[{struct \mbox{\hyperlink{struct_piano___gioco}{Piano\+\_\+\+Gioco}}}]{p }\end{DoxyParamCaption})}
+
+Verifica quale tetramino, in quele rotazione e in quale posizione effettua un punteggio maggiore 
+\begin{DoxyParams}{Parametri}
+{\em n\+\_\+block} & numero del blocco \\
+\hline
+{\em rot} & rotazione \\
+\hline
+{\em v} & vettore contenente la descrizione dei tetramini \\
+\hline
+{\em p} & piano di gioco \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Restituisce}
+posizione 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_n_p_c__tetris_8h_a5d40836564ee84ee2917d63cbe53b225}\label{_n_p_c__tetris_8h_a5d40836564ee84ee2917d63cbe53b225}} 
+\index{NPC\_tetris.h@{NPC\_tetris.h}!control\_nbloc@{control\_nbloc}}
+\index{control\_nbloc@{control\_nbloc}!NPC\_tetris.h@{NPC\_tetris.h}}
+\doxysubsubsection{\texorpdfstring{control\_nbloc()}{control\_nbloc()}}
+{\footnotesize\ttfamily int control\+\_\+nbloc (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{struct_blocco}{Blocco}} $\ast$}]{v,  }\item[{int}]{nbloc }\end{DoxyParamCaption})}
+
+Controlla il numero del tetramino da inserire 
+\begin{DoxyParams}{Parametri}
+{\em v} & vettore contenente la descrizione dei tetramini \\
+\hline
+{\em nbloc} & il numero del tetramino \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Restituisce}
+il numero del tetramino o eventuali errori NNVALIDO o BLOCCHIFINITI 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_n_p_c__tetris_8h_a62de51e6629ad4f6a85e63dd43764a3f}\label{_n_p_c__tetris_8h_a62de51e6629ad4f6a85e63dd43764a3f}} 
+\index{NPC\_tetris.h@{NPC\_tetris.h}!control\_pos@{control\_pos}}
+\index{control\_pos@{control\_pos}!NPC\_tetris.h@{NPC\_tetris.h}}
+\doxysubsubsection{\texorpdfstring{control\_pos()}{control\_pos()}}
+{\footnotesize\ttfamily int control\+\_\+pos (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{struct_blocco}{Blocco}}}]{b,  }\item[{int}]{pos }\end{DoxyParamCaption})}
+
+Controlla la posizione del tetramino da inserire 
+\begin{DoxyParams}{Parametri}
+{\em b} & tetramino \\
+\hline
+{\em pos} & posizione \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Restituisce}
+la posizioni o eventuali errori SPORGEDX o SPORGESX 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_n_p_c__tetris_8h_a48523e0518a631dd4d1df43cff782cc7}\label{_n_p_c__tetris_8h_a48523e0518a631dd4d1df43cff782cc7}} 
+\index{NPC\_tetris.h@{NPC\_tetris.h}!control\_rot@{control\_rot}}
+\index{control\_rot@{control\_rot}!NPC\_tetris.h@{NPC\_tetris.h}}
+\doxysubsubsection{\texorpdfstring{control\_rot()}{control\_rot()}}
+{\footnotesize\ttfamily int control\+\_\+rot (\begin{DoxyParamCaption}\item[{int}]{rot,  }\item[{int}]{n\+\_\+block }\end{DoxyParamCaption})}
+
+Controlla la rotazione del tetramino da inserire 
+\begin{DoxyParams}{Parametri}
+{\em rot} & rotazione \\
+\hline
+{\em n\+\_\+block} & numero del tetramino \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Restituisce}
+la rotazione o eventuale errore NNVALIDO 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_n_p_c__tetris_8h_acc75e9d6fb87a661ed80894c7316fd80}\label{_n_p_c__tetris_8h_acc75e9d6fb87a661ed80894c7316fd80}} 
+\index{NPC\_tetris.h@{NPC\_tetris.h}!p\_copia@{p\_copia}}
+\index{p\_copia@{p\_copia}!NPC\_tetris.h@{NPC\_tetris.h}}
+\doxysubsubsection{\texorpdfstring{p\_copia()}{p\_copia()}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{struct_piano___gioco}{Piano\+\_\+\+Gioco}} p\+\_\+copia (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{struct_piano___gioco}{Piano\+\_\+\+Gioco}}}]{p }\end{DoxyParamCaption})}
+
+Effettua una deep copy di un piano di gioco 
+\begin{DoxyParams}{Parametri}
+{\em p} & piano di gioco \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Restituisce}
+deep copy del piano di gioco 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_n_p_c__tetris_8h_a05702d93b6c50cc560304603dafa4deb}\label{_n_p_c__tetris_8h_a05702d93b6c50cc560304603dafa4deb}} 
+\index{NPC\_tetris.h@{NPC\_tetris.h}!score\_play@{score\_play}}
+\index{score\_play@{score\_play}!NPC\_tetris.h@{NPC\_tetris.h}}
+\doxysubsubsection{\texorpdfstring{score\_play()}{score\_play()}}
+{\footnotesize\ttfamily int score\+\_\+play (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{struct_blocco}{Blocco}} $\ast$}]{v,  }\item[{struct \mbox{\hyperlink{struct_piano___gioco}{Piano\+\_\+\+Gioco}}}]{p,  }\item[{int}]{depth,  }\item[{int}]{pos,  }\item[{int}]{rot,  }\item[{int}]{nbloc }\end{DoxyParamCaption})}
+
+Scorre l\textquotesingle{}albero di gioco e ne calcola il punteggio complessivo 
+\begin{DoxyParams}{Parametri}
+{\em v} & vettore contenente la descrizione dei tetramini \\
+\hline
+{\em p} & piano di gioco \\
+\hline
+{\em depth} & profondità dell\textquotesingle{}albero \\
+\hline
+{\em pos} & posizione \\
+\hline
+{\em rot} & rotazione \\
+\hline
+{\em nbloc} & numero del blocco \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Restituisce}
+il punteggio 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_n_p_c__tetris_8h_a189d1732754e01998817f7e09195536e}\label{_n_p_c__tetris_8h_a189d1732754e01998817f7e09195536e}} 
+\index{NPC\_tetris.h@{NPC\_tetris.h}!top\_play@{top\_play}}
+\index{top\_play@{top\_play}!NPC\_tetris.h@{NPC\_tetris.h}}
+\doxysubsubsection{\texorpdfstring{top\_play()}{top\_play()}}
+{\footnotesize\ttfamily int top\+\_\+play (\begin{DoxyParamCaption}\item[{int}]{score,  }\item[{struct \mbox{\hyperlink{struct_blocco}{Blocco}} $\ast$}]{v }\end{DoxyParamCaption})}
+
+Identifica se il tetramino selezionato rappresenta la mossa migliore 
+\begin{DoxyParams}{Parametri}
+{\em score} & punteggio effettuato \\
+\hline
+{\em v} & vettore contenente la descrizione dei tetramini \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Restituisce}
+1 se è la mossa migliore, 0 altrimenti 
+\end{DoxyReturn}
